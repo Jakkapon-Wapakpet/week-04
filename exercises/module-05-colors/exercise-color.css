@@ -1,42 +1,43 @@
 /* ============================================
-   DEBUG — COLORS
-   Fix the color values. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — COLORS (สี)
+   แก้ไขค่าสี กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: Background should be teal (#008080).
-   Current: Not working — the hex value is missing something.
-   Fix the value.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: พื้นหลังควรเป็นสีเขียวแกมน้ำเงิน (Teal: #008080)
+   สถานะปัจจุบัน: ไม่ทำงาน — ค่าเลขฐานสิบหก (hex) ขาดอะไรบางอย่างไป
+   วิธีแก้: แก้ไขค่าสีให้ถูกต้อง
 */
 
 .hex-box {
-  background: 008080;
+  background: #008080;
   color: white;
   padding: 20px;
 }
 
 
-/* --- Bug 2 ---
-   Goal: Text color should be black at 50% opacity (rgba).
-   Current: The alpha value is outside the valid range.
-   Fix the rgba value.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: สีตัวหนังสือควรเป็นสีดำที่มีความโปร่งใส 50% (rgba)
+   สถานะปัจจุบัน: ค่า alpha (ความโปร่งใส) อยู่นอกช่วงที่ถูกต้อง
+   วิธีแก้: แก้ไขค่า rgba ให้ถูกต้อง
 */
 
 .semi-box {
-  color: rgba(0, 0, 0, 2);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 1.2rem;
 }
 
 
-/* --- Bug 3 ---
-   Goal: Text should be dark enough to read against the light background.
-   Current: The color value is too light.
-   Fix the color to a darker shade while keeping it blue.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: ข้อความควรมีสีเข้มพอที่จะอ่านได้ง่ายบนพื้นหลังสีอ่อน
+   สถานะปัจจุบัน: ค่าสีสว่างเกินไป
+   วิธีแก้: แก้ไขสีให้เข้มขึ้นโดยที่ยังคงเป็นสีน้ำเงินอยู่
 */
 
 .bad-contrast {
   background: #f0f0f0;
-  color: #b0c4de;
+  color: #004080;
   padding: 20px;
 }
+

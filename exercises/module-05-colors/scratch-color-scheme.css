@@ -1,19 +1,110 @@
 /* ============================================
-   SCRATCH — COLOR SCHEME
-   Write all CSS from scratch.
+   เขียนเองตั้งแต่เริ่มต้น — COLOR SCHEME (ชุดสี)
+   เขียน CSS ทั้งหมดด้วยตัวเองตั้งแต่เริ่มต้น
    
-   Choose your own color scheme, then apply it.
-   Define at minimum these colors:
+   เลือกชุดสีของคุณเอง จากนั้นจึงนำไปใช้งาน
+   กำหนดค่าสีเหล่านี้เป็นอย่างน้อย:
    --primary, --secondary, --accent, --bg, --text
 
 
-   TASKS:
-   1. :root — define 5 CSS custom properties (--primary, --secondary, --accent, --bg, --text)
-   2. body — background var(--bg), color var(--text), font-family sans-serif
-   3. .site-header — background var(--primary), padding, white text
-   4. .site-header a — color white, no underline, hover underline
-   5. .content — padding 40px 20px, max-width 800px, margin auto
-   6. .btn-primary — background var(--primary), white text, padding, border-radius
-   7. .btn-secondary — background transparent, border var(--secondary), color var(--secondary)
-   8. .site-footer — background var(--secondary), white text, text-align center, padding
+   ภารกิจ:
+   1. :root — กำหนดตัวแปร (CSS custom properties) 5 ตัว ได้แก่ --primary, --secondary, --accent, --bg, --text
+   2. body — กำหนด background: var(--bg), color: var(--text), font-family: sans-serif
+   3. .site-header — กำหนด background: var(--primary), ใส่ padding, ข้อความสีขาว
+   4. .site-header a — สีข้อความสีขาว, ไม่มีเส้นใต้, เมื่อเมาส์ชี้ (hover) ให้มีเส้นใต้
+   5. .content — กำหนด padding: 40px 20px, max-width: 800px, margin: auto
+   6. .btn-primary — กำหนด background: var(--primary), ข้อความสีขาว, ใส่ padding, กำหนด border-radius
+   7. .btn-secondary — กำหนด background: transparent, กำหนด border ด้วยค่าของ var(--secondary), color: var(--secondary)
+   8. .site-footer — กำหนด background: var(--secondary), ข้อความสีขาว, จัดข้อความอยู่กึ่งกลาง (text-align center), ใส่ padding
    ============================================ */
+
+:root {
+  --primary: #818cf8;    
+  --secondary: #94a3b8;  
+  --accent: #fb7185;     
+  --bg: #0f172a;          
+  --text: #f8fafc;       
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.site-header {
+  background: var(--primary);
+  padding: 16px 24px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.site-header a {
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.site-header a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 12px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: white;
+}
+
+.site-footer {
+  background: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: 40px;
+}
+
+.site-footer p {
+  margin: 0;
+}

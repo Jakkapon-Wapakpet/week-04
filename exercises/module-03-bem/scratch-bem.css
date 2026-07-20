@@ -1,13 +1,49 @@
 /* ============================================
-   SCRATCH — MEDIA OBJECT (BEM)
-   Write all CSS from scratch.
+   เขียนเองตั้งแต่เริ่มต้น — MEDIA OBJECT (BEM)
+   เขียน CSS ทั้งหมดด้วยตัวเองตั้งแต่เริ่มต้น
    
-   TASKS:
-   1. .media — display flex, gap 16px, padding 16px, border-bottom
-   2. .media__image — width 100px, height auto
-   3. .media__image--round — border-radius 50%
-   4. .media__body — flex 1
-   5. .media__title — font-size 1.2rem, bold, margin-bottom 4px
-   6. .media__text — color #555, line-height 1.5
-   7. .media--featured — background #f0f8ff, border-left 4px solid blue
+   ภารกิจ:
+   1. .media — กำหนด display: flex, gap: 16px, padding: 16px, border-bottom
+   2. .media__image — กำหนด width: 100px, height: auto
+   3. .media__image--round — กำหนด border-radius: 50%
+   4. .media__body — กำหนด flex: 1
+   5. .media__title — กำหนด font-size: 1.2rem, ตัวหนา (bold), margin-bottom: 4px
+   6. .media__text — กำหนด color: #555, line-height: 1.5
+   7. .media--featured — กำหนด background: #f0f8ff, border-left: 4px solid blue
    ============================================ */
+
+.media {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.media__image {
+  width: 100px;
+  height: auto;
+}
+
+.media__image--round {
+  border-radius: 50%;
+}
+
+.media__body {
+  flex: 1;
+}
+
+.media__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.media__text {
+  color: #555;
+  line-height: 1.5;
+}
+
+.media--featured {
+  background: #f0f8ff;
+  border-left: 4px solid blue;
+}

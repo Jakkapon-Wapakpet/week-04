@@ -1,13 +1,13 @@
 /* ============================================
-   DEBUG — BREAKPOINTS
-   Fix the responsive issues. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — BREAKPOINTS & RESPONSIVE DESIGN (จุดตัดและความยืดหยุ่นหน้าจอ)
+   แก้ไขการจัดวางที่ยืดหยุ่น กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: 0-640px = red, 640-768px = orange, 768px+ = green
-   Current: The order is wrong — the 640px rule overrides the 768px one.
-   Fix by reordering the media queries.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: ขนาดหน้าจอ 0-640px = สีแดง, 640-768px = สีส้ม, 768px ขึ้นไป = สีเขียว
+   สถานะปัจจุบัน: การจัดเรียงลำดับสื่อ (media queries) ไม่ถูกต้อง — กฎสำหรับ 640px ไปเขียนทับ (override) กฎสำหรับ 768px
+   วิธีแก้: จัดเรียงลำดับ media queries ใหม่ให้ถูกต้อง
 */
 
 .responsive-text {
@@ -27,10 +27,10 @@
 }
 
 
-/* --- Bug 2 ---
-   Goal: Screens 480px+ should have font-size 1.25rem.
-   Current: Always 1rem. A media query is missing.
-   Add one media query for min-width: 480px.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: หน้าจอขนาด 480px ขึ้นไป ควรมีขนาดฟอนต์ 1.25rem
+   สถานะปัจจุบัน: เป็นขนาด 1rem ตลอดเวลา เพราะขาด media query ไป
+   วิธีแก้: เพิ่ม media query สำหรับ min-width: 480px
 */
 
 .mobile-text {
@@ -38,10 +38,10 @@
 }
 
 
-/* --- Bug 3 ---
-   Goal: Below 600px, columns stack vertically.
-   Current: They're always side by side.
-   Add a media query that changes the flex direction at max-width: 600px.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: เมื่อหน้าจอแคบกว่า 600px คอลัมน์ควรจะจัดเรียงแนวตั้งแบบซ้อนกัน
+   สถานะปัจจุบัน: คอลัมน์ยังแสดงผลเรียงเคียงข้างกันตลอดเวลา
+   วิธีแก้: เพิ่ม media query ที่ปรับเปลี่ยนทิศทางเฟล็กซ์ (flex-direction) เมื่อ max-width เป็น 600px
 */
 
 .row {
@@ -55,3 +55,4 @@
   padding: 24px;
   text-align: center;
 }
+

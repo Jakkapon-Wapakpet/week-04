@@ -1,13 +1,13 @@
 /* ============================================
-   DEBUG — DISPLAY & FLEXBOX
-   Fix the layout issues. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — DISPLAY & FLEXBOX (การแสดงผลและเฟล็กซ์บล็อก)
+   แก้ไขการจัดเลย์เอาต์ กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: Items centered both horizontally and vertically.
-   Current: They're in a flex container but not centered.
-   Fix by adding the missing flex properties to .flex-center.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: จัดตำแหน่งรายการให้อยู่กึ่งกลางทั้งในแนวนอนและแนวตั้ง
+   สถานะปัจจุบัน: รายการอยู่ภายในคอนเทนเนอร์แบบ flex แล้ว แต่ไม่ได้จัดกึ่งกลาง
+   วิธีแก้: เพิ่มคุณสมบัติ flex ที่หายไปให้กับ .flex-center เพื่อจัดกึ่งกลาง
 */
 
 .flex-center {
@@ -17,11 +17,11 @@
 }
 
 
-/* --- Bug 2 ---
-   Goal: Items should be in a horizontal row.
-   Current: They're spans (inline) but still stacking wrong. 
-   The container should make them a flex row.
-   Add display: flex to .flex-row.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: รายการต่างๆ ควรเรียงต่อกันเป็นแถวในแนวนอน
+   สถานะปัจจุบัน: รายการต่างๆ เป็นแท็ก span (inline) แต่แสดงผลไม่ถูกต้อง 
+   คอนเทนเนอร์ควรสั่งให้รายการเรียงเป็นแถวแบบ flex
+   วิธีแก้: เพิ่ม display: flex ให้กับ .flex-row
 */
 
 .flex-row {
@@ -30,10 +30,10 @@
 }
 
 
-/* --- Bug 3 ---
-   Goal: The link should be block-level so the whole padded area is clickable.
-   Current: It's inline, so padding doesn't work correctly.
-   Fix the display property.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: ลิงก์ควรแสดงผลเป็นบล็อก (block-level) เพื่อให้สามารถคลิกได้ทั่วพื้นที่ที่มี padding ทั้งหมด
+   สถานะปัจจุบัน: มันเป็นแบบ inline ทำให้ระยะ padding แสดงผลไม่ถูกต้อง
+   วิธีแก้: แก้ไขคุณสมบัติ display
 */
 
 .block-link {
@@ -42,3 +42,4 @@
   padding: 16px 24px;
   text-decoration: none;
 }
+

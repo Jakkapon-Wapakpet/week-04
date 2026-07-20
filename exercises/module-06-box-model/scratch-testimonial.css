@@ -1,13 +1,22 @@
 /* ============================================
-   SCRATCH — TESTIMONIAL CARD
-   Write all CSS from scratch.
+   เขียนเองตั้งแต่เริ่มต้น — TESTIMONIAL CARD (การ์ดคำนิยม)
+   เขียน CSS ทั้งหมดด้วยตัวเองตั้งแต่เริ่มต้น
    
-   TASKS:
-   1. .testimonial — max-width 400px, margin auto, padding 32px, border 1px solid #e0e0e0, border-radius 12px, box-shadow subtle
-   2. .testimonial__quote — font-style italic, font-size 1.15rem, line-height 1.7, color #333, margin-bottom 24px
-   3. .testimonial__author — display flex, align-items center, gap 12px
-   4. .testimonial__avatar — width 60px, height 60px, border-radius 50%, border 2px solid #ddd
-   5. .testimonial__info — display flex, flex-direction column
-   6. .testimonial__name — font-weight bold, font-size 1rem
-   7. .testimonial__role — font-size 0.85rem, color #888
+   ภารกิจ:
+   1. .testimonial — กำหนด max-width: 400px, margin: auto, padding: 32px, border: 1px solid #e0e0e0, border-radius: 12px, box-shadow: subtle (เงาบางเบา)
+   2. .testimonial__quote — ตัวเอียง (font-style: italic), ขนาด 1.15rem, line-height: 1.7, สี #333, margin-bottom: 24px
+   3. .testimonial__author — กำหนด display: flex, จัดกึ่งกลางแนวตั้ง (align-items: center), ระยะห่างระหว่างลูก (gap): 12px
+   4. .testimonial__avatar — กำหนดความกว้าง 60px, ความสูง 60px, border-radius: 50%, เส้นขอบ 2px solid #ddd
+   5. .testimonial__info — กำหนด display: flex, เรียงแนวตั้ง (flex-direction: column)
+   6. .testimonial__name — ตัวหนา, ขนาด 1rem
+   7. .testimonial__role — ขนาด 0.85rem, สี #888
    ============================================ */
+
+
+   .testimonial {
+      max-width: 400px;
+      margin :auto;
+      padding: 32px;
+      border: 1px solid #e0e0e0;
+      
+   }

@@ -1,44 +1,45 @@
 /* ============================================
-   PARTIAL — COLOR VALUES
-   Replace each _____ with the correct color value.
+   แบบฝึกหัดเติมคำ — COLOR VALUES (ค่าสี)
+   แทนที่ _____ ด้วยค่าสีที่ถูกต้อง
    ============================================ */
 
 
-/* Task 1 — Use a named color: "coral" for background, white text */
+/* ภารกิจที่ 1 — ใช้ชื่อสี (named color): สี "coral" เป็นพื้นหลัง, ข้อความสีขาว */
 .named {
-  background: _____;
+  background: coral;
   color: white;
   padding: 12px;
 }
 
 
-/* Task 2 — Use hex: background pure red, text white */
+/* ภารกิจที่ 2 — ใช้เลขฐานสิบหก (hex): พื้นหลังสีแดงบริสุทธิ์, ข้อความสีขาว */
 .hex-code {
-  background: _____;
-  color: _____;
+  background: #ff0000;
+  color: #ffffff;
   padding: 12px;
 }
 
 
-/* Task 3 — Use rgb: background pure green (0-255), text white */
+/* ภารกิจที่ 3 — ใช้ค่า rgb: พื้นหลังสีเขียวบริสุทธิ์ (0-255), ข้อความสีขาว */
 .rgb-val {
-  background: _____;
+  background: rgb(0, 255, 0);
   color: white;
   padding: 12px;
 }
 
 
-/* Task 4 — Use rgba: background pure blue at 30% opacity, text white */
+/* ภารกิจที่ 4 — ใช้ค่า rgba: พื้นหลังสีน้ำเงินบริสุทธิ์ที่มีความโปร่งใส 30%, ข้อความสีขาว */
 .rgba-val {
-  background: _____;
+  background: rgba(0, 0, 255, 0.3);
   color: white;
   padding: 12px;
 }
 
 
-/* Task 5 — Use hsl: background purple (hue ~270, saturation 80%, lightness 50%), text white */
+/* ภารกิจที่ 5 — ใช้ค่า hsl: พื้นหลังสีม่วง (องศา/hue ประมาณ 270, ความอิ่มตัวของสี/saturation 80%, ความสว่าง/lightness 50%), ข้อความสีขาว */
 .hsl-val {
-  background: _____;
+  background: hsl(270, 80%, 50%);
   color: white;
   padding: 12px;
 }
+

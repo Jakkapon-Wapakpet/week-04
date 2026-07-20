@@ -1,10 +1,10 @@
 /* ============================================
-   PARTIAL — FLEXBOX
-   Replace each _____ with the correct property/value.
+   แบบฝึกหัดเติมคำ — FLEXBOX (การจัดวางรูปแบบด้วยเฟล็กซ์)
+   แทนที่ _____ ด้วยคุณสมบัติ (property) หรือค่า (value) ที่ถูกต้อง
    ============================================ */
 
 
-/* Task 1 — Navigation: logo on left, links on right */
+/* ภารกิจที่ 1 — เมนูนำทาง (Navigation): โลโก้อยู่ฝั่งซ้าย, ลิงก์เมนูอยู่ฝั่งขวา */
 .nav-bar {
   _____: flex;
   _____: space-between;
@@ -24,7 +24,7 @@
 }
 
 
-/* Task 2 — Card grid: 3 cards in a row, equal width, gap 16px */
+/* ภารกิจที่ 2 — กริดการ์ด (Card grid): การ์ด 3 ใบเรียงต่อกันในหนึ่งแถว, ความกว้างเท่ากันทั้งหมด, ระยะห่างระหว่างกัน 16px */
 .card-grid {
   _____: flex;
   _____: 16px;
@@ -38,7 +38,7 @@
 }
 
 
-/* Task 3 — Center content both ways in a 200px tall box */
+/* ภารกิจที่ 3 — จัดตำแหน่งเนื้อหาให้อยู่กึ่งกลางทั้งสองแนวในกล่องที่มีความสูง 200px */
 .center-me {
   _____: flex;
   _____: center;
@@ -48,7 +48,7 @@
 }
 
 
-/* Task 4 — Equal height columns */
+/* ภารกิจที่ 4 — กำหนดคอลัมน์ต่างๆ ให้มีความสูงเท่ากันทั้งหมด */
 .equal-height {
   _____: flex;
   _____: 16px;
@@ -59,3 +59,4 @@
   background: #ffeaa7;
   padding: 16px;
 }
+

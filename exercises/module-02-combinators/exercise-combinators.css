@@ -1,13 +1,13 @@
 /* ============================================
-   DEBUG — COMBINATORS & PSEUDO-CLASSES
-   Fix the CSS. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — COMBINATORS & PSEUDO-CLASSES (ตัวเชื่อมต่อและคลาสเทียม)
+   แก้ไข CSS กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: Only top-level li items should be bold.
-   Current: ALL li items including nested ones are bold.
-   Fix the descendant selector to use a child selector instead.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: เฉพาะรายการ <li> ในระดับบนสุดเท่านั้นที่ควรเป็นตัวหนา
+   สถานะปัจจุบัน: รายการ <li> ทั้งหมด (รวมถึงรายการที่ซ้อนอยู่ด้านใน) เป็นตัวหนา
+   วิธีแก้: แก้ไข descendant selector (ตัวเลือกแบบลูกหลาน) ให้เป็น child selector (ตัวเลือกแบบลูกคนแรก/ระดับติดกัน) แทน
 */
 
 .nav li {
@@ -15,10 +15,10 @@
 }
 
 
-/* --- Bug 2 ---
-   Goal: The first paragraph AFTER each h3 should be italic.
-   Current: Something is wrong — all or none are italic.
-   Fix the selector.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: ย่อหน้าแรกที่อยู่ถัดจาก h3 แต่ละตัว (ถัดไปทันที) ควรเป็นตัวเอียง
+   สถานะปัจจุบัน: มีบางอย่างผิดปกติ — ทั้งหมดหรือไม่มีตัวไหนเลยที่เป็นตัวเอียง
+   วิธีแก้: แก้ไข selector ให้ถูกต้อง
 */
 
 h3 p {
@@ -26,13 +26,15 @@ h3 p {
 }
 
 
-/* --- Bug 3 ---
-   Goal: Hovering the button should turn its background red.
-   Current: Nothing happens on hover.
-   Fix the selector.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: เมื่อนำเมาส์ไปชี้ที่ปุ่ม (hover) พื้นหลังควรเปลี่ยนเป็นสีแดง
+   สถานะปัจจุบัน: ไม่มีอะไรเกิดขึ้นเมื่อนำเมาส์ไปชี้
+   วิธีแก้: แก้ไข selector ให้ถูกต้อง
 */
 
 .btn-hover hover {
   background: red;
   color: white;
 }
+
+

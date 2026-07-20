@@ -1,14 +1,15 @@
 /* ============================================
-   SCRATCH — NAVIGATION MENU
-   Write all CSS from scratch.
+   เขียนเองตั้งแต่เริ่มต้น — NAVIGATION MENU (แถบเมนูนำทาง)
+   เขียน CSS ทั้งหมดด้วยตัวเองตั้งแต่เริ่มต้น
    
-   TASKS:
-   1. .navbar — display flex, align items center, background dark, padding
-   2. .logo — white text, bold, no underline
-   3. .nav-links — display flex, no list style, gap between items
-   4. .nav-links a — white text, remove underline, padding
-   5. .nav-links a:hover — underline or background change
-   6. .dropdown — hidden by default (display: none), positioned absolute under Services
-   7. The li that contains .dropdown — position relative
-   8. Hover over that li — .dropdown becomes visible (display: block)
+   ภารกิจ:
+   1. .navbar — กำหนด display: flex, จัดกึ่งกลางแนวตั้ง (align-items: center), พื้นหลังสีเข้ม, ใส่ padding
+   2. .logo — ข้อความสีขาว, ตัวหนา, ไม่มีเส้นใต้
+   3. .nav-links — กำหนด display: flex, ไม่มีจุดหน้ารายการ (list-style: none), เว้นระยะห่างระหว่างรายการ (gap)
+   4. .nav-links a — ข้อความสีขาว, เอาเส้นใต้ออก, ใส่ padding
+   5. .nav-links a:hover — เมื่อชี้เมาส์ (hover) ให้เพิ่มเส้นใต้หรือเปลี่ยนสีพื้นหลัง
+   6. .dropdown — ซ่อนไว้เริ่มต้น (display: none), จัดตำแหน่งแบบ absolute ใต้เมนู Services
+   7. แท็ก <li> ที่หุ้มตัว .dropdown อยู่ — กำหนด position: relative
+   8. เมื่อเมาส์ชี้บน <li> ตัวนั้น — ให้แสดง .dropdown ขึ้นมา (display: block)
    ============================================ */
+

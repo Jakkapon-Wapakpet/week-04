@@ -1,33 +1,33 @@
 /* ============================================
-   PARTIAL — BEM
-   Replace each _____ with the correct BEM selector.
+   แบบฝึกหัดเติมคำ — BEM
+   แทนที่ _____ ด้วย BEM selector ที่ถูกต้อง
    ============================================ */
 
 
-/* --- Profile block --- */
-/* Task 1: Select the profile block itself — add border, padding, max-width */
-_____ {
+/* --- บล็อก Profile --- */
+/* ภารกิจที่ 1: เลือกตัวบล็อก profile เอง — เพิ่มเส้นขอบ (border), ระยะห่างด้านใน (padding), ความกว้างสูงสุด (max-width) */
+.profile {
   border: 1px solid #ddd;
   padding: 24px;
   max-width: 300px;
   text-align: center;
 }
 
-/* Task 2: Select the profile name element — make it bold, font-size 1.3rem */
-_____ {
+/* ภารกิจที่ 2: เลือกองค์ประกอบชื่อ profile (profile name) — กำหนดให้เป็นตัวหนา (bold), ขนาดตัวอักษร 1.3rem */
+.profile__name {
   font-weight: bold;
   font-size: 1.3rem;
   margin: 12px 0 4px;
 }
 
-/* Task 3: Select the profile bio element — gray color, small font */
-_____ {
+/* ภารกิจที่ 3: เลือกองค์ประกอบคำอธิบายย่อ (profile bio) — ตัวหนังสือสีเทา, ขนาดฟอนต์เล็ก */
+.profile__bio {
   color: #666;
   font-size: 0.9rem;
 }
 
-/* Task 4: Select the profile FOLLOW modifier button — green background */
-_____ {
+/* ภารกิจที่ 4: เลือกปุ่มที่เป็น FOLLOW modifier ของ profile — พื้นหลังสีเขียว */
+.profile__btn--follow {
   background: #2ea44f;
   color: white;
   border: none;
@@ -36,9 +36,10 @@ _____ {
 }
 
 
-/* --- Alert block --- */
-/* Task 5: Select the alert--success modifier — green border, light green bg */
-_____ {
+/* --- บล็อก Alert --- */
+/* ภารกิจที่ 5: เลือกตัวปรับแต่ง alert--success (alert--success modifier) — เส้นขอบสีเขียว, พื้นหลังสีเขียวอ่อน */
+.alert--success {
   border: 2px solid #2ea44f;
   background: #d4edda;
 }
+

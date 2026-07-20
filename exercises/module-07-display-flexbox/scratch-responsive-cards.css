@@ -1,11 +1,12 @@
 /* ============================================
-   SCRATCH — RESPONSIVE CARD GRID
-   Write all CSS from scratch.
+   เขียนเองตั้งแต่เริ่มต้น — RESPONSIVE CARD GRID (กริดการ์ดที่รองรับหลายหน้าจอ)
+   เขียน CSS ทั้งหมดด้วยตัวเองตั้งแต่เริ่มต้น
    
-   TASKS:
-   1. .service-grid — display flex, flex-wrap wrap, gap 20px, justify-content center
-   2. .service-card — flex-basis 300px (or flex: 1 1 300px), border 1px solid #ddd, border-radius 8px, padding 24px, box-shadow subtle
-   3. .service-card h3 — font-size 1.2rem, margin-bottom 8px, color #2d3436
-   4. .service-card p — color #636e72, line-height 1.5
-   5. .service-card:hover — box-shadow larger, translateY -4px, transition for smoothness
+   ภารกิจ:
+   1. .service-grid — กำหนด display: flex, สามารถขึ้นบรรทัดใหม่ได้ (flex-wrap: wrap), gap: 20px, จัดแนวนอนกึ่งกลาง (justify-content: center)
+   2. .service-card — กำหนด flex-basis: 300px (หรือ flex: 1 1 300px), border: 1px solid #ddd, border-radius: 8px, padding: 24px, box-shadow: subtle (เงาบางเบา)
+   3. .service-card h3 — ขนาด 1.2rem, margin-bottom: 8px, สี #2d3436
+   4. .service-card p — สี #636e72, line-height: 1.5
+   5. .service-card:hover — เมื่อชี้เมาส์ (hover) ให้เงาเข้มขึ้น (box-shadow larger), ขยับขึ้นด้านบน (transform: translateY(-4px)), ใส่ transition เพื่อให้เคลื่อนไหวราบรื่น
    ============================================ */
+

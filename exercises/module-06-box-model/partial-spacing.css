@@ -1,10 +1,10 @@
 /* ============================================
-   PARTIAL — SPACING
-   Replace each _____ with the correct value.
+   แบบฝึกหัดเติมคำ — SPACING (ระยะห่างและพื้นที่รอบกล่อง)
+   แทนที่ _____ ด้วยคุณสมบัติหรือค่าที่ถูกต้อง
    ============================================ */
 
 
-/* Task 1 — Card: add padding 24px on all sides, border 1px solid #ddd, border-radius 8px, box-sizing border-box */
+/* ภารกิจที่ 1 — Card: เพิ่ม padding 24px ทุกด้าน, border 1px solid #ddd, border-radius 8px, box-sizing border-box */
 .card-task {
   border: 1px solid #ddd;
   _____: 8px;
@@ -12,7 +12,7 @@
 }
 
 
-/* Task 2 — Two boxes with a 32px gap between them */
+/* ภารกิจที่ 2 — กล่องสองกล่องโดยให้มีระยะห่างระหว่างกัน 32px */
 .box {
   display: inline-block;
   width: 120px;
@@ -30,7 +30,7 @@
 }
 
 
-/* Task 3 — Button: padding 12px top/bottom, 24px left/right */
+/* ภารกิจที่ 3 — ปุ่ม: กำหนด padding ด้านบน/ล่าง 12px, ด้านซ้าย/ขวา 24px */
 .btn-task {
   background: #0984e3;
   color: white;
@@ -41,9 +41,10 @@
 }
 
 
-/* Task 4 — Image: 4px solid black border, 8px padding between image and border */
+/* ภารกิจที่ 4 — รูปภาพ: เส้นขอบทึบสีดำขนาด 4px, กำหนด padding 8px ระหว่างรูปภาพกับเส้นขอบ */
 .img-task {
   _____: 4px solid black;
   _____: 8px;
   _____: 50%;
 }
+

@@ -1,18 +1,18 @@
 /* ============================================
-   DEBUG — SPECIFICITY
-   Three CSS bugs for you to fix.
-   Rules: Do NOT modify the HTML file.
+   แก้ไขบั๊ก — SPECIFICITY (ความจำเพาะของ Selector)
+   มีบั๊ก CSS 3 จุดให้คุณแก้ไข
+   กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: The paragraph with class "highlight" should be red.
-   Problem: It's blue right now.
-   Fix: remove the extra specificity from the first selector.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: ย่อหน้า (paragraph) ที่มี class "highlight" ควรเป็นสีแดง
+   ปัญหา: ตอนนี้มันเป็นสีน้ำเงิน
+   วิธีแก้: ลบความเจาะจง (specificity) ส่วนเกินออกจาก selector แรก
 */
 
-p.highlight {
-  color: blue;
+p {
+  color: red;
 }
 
 .highlight {
@@ -20,13 +20,13 @@ p.highlight {
 }
 
 
-/* --- Bug 2 ---
-   Goal: The paragraph with id="special" inside .card should be green.
-   Problem: A more specific selector is overriding #special.
-   Fix: remove the extra specificity from the first selector.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: ย่อหน้า (paragraph) ที่มี id="special" ภายใน class ".card" ควรเป็นสีเขียว
+   ปัญหา: selector ที่เจาะจงกว่ากำลังเขียนทับ (override) #special
+   วิธีแก้: ลบความเจาะจง (specificity) ส่วนเกินออกจาก selector แรก
 */
 
-.card p#special {
+.card p {
   color: black;
 }
 
@@ -35,11 +35,11 @@ p.highlight {
 }
 
 
-/* --- Bug 3 ---
-   Goal: The button text should be white on the blue background.
-   Current: Button has color: black.
-   Add ONE new rule to .btn below to make text white.
-   Do not remove the existing color rule.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: ข้อความบนปุ่มควรเป็นสีขาวบนพื้นหลังสีน้ำเงิน
+   สถานะปัจจุบัน: ปุ่มมีคุณสมบัติ color: black (สีดำ)
+   เพิ่มกฎใหม่ 1 ข้อใน .btn ด้านล่างเพื่อทำให้ข้อความมีสีขาว
+   ห้ามลบกฎ color ที่มีอยู่เดิมออก
 */
 
 .btn {
@@ -49,4 +49,6 @@ p.highlight {
   border: none;
   border-radius: 6px;
   font-size: 1rem;
+  color: white;
 }
+

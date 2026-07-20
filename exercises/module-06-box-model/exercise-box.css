@@ -1,13 +1,13 @@
 /* ============================================
-   DEBUG — BOX MODEL
-   Fix the box sizing issues. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — BOX MODEL (โครงสร้างกล่อง)
+   แก้ไขปัญหาเกี่ยวกับขนาดกล่อง (box sizing) กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: .box-overflow should be 300px total.
-   Current: width: 300px + padding 20px + border 2px = 342px.
-   Fix: add the right property to make padding+border fit inside the 300px.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: คลาส .box-overflow ควรมีความกว้างรวมทั้งหมด 300px
+   สถานะปัจจุบัน: width: 300px + padding 20px + border 2px = ความกว้างจริง 342px
+   วิธีแก้: เพิ่มคุณสมบัติที่ถูกต้องเพื่อทำให้ padding และ border นับรวมอยู่ภายในความกว้าง 300px
 */
 
 .box-overflow {
@@ -18,10 +18,10 @@
 }
 
 
-/* --- Bug 2 ---
-   Goal: Gap between .box-a and .box-b should be 70px.
-   Current: Margins are collapsing — only 40px gap.
-   Fix: add a property to .box-b to prevent margin collapse.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: ระยะห่างระหว่าง .box-a และ .box-b ควรเป็น 70px
+   สถานะปัจจุบัน: เกิดการยุบตัวรวมกันของขอบนอก (margin collapsing) — ทำให้มีระยะห่างจริงเพียง 40px
+   วิธีแก้: เพิ่มคุณสมบัติเพื่อป้องกันการยุบตัวรวมกันของ margin
 */
 
 .box-a {
@@ -37,10 +37,10 @@
 }
 
 
-/* --- Bug 3 ---
-   Goal: .bad-span should be 200px wide.
-   Current: It's an inline element so width is ignored.
-   Fix: change the display property so it respects width but stays inline flow.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: คลาส .bad-span ควรมีความกว้าง 200px
+   สถานะปัจจุบัน: มันเป็นองค์ประกอบแบบ inline ความกว้าง (width) จึงไม่มีผล
+   วิธีแก้: เปลี่ยนคุณสมบัติ display เพื่อให้ยอมรับขนาดความกว้าง แต่ยังคงสามารถไหลต่อกันแบบแถวเดียว (inline flow) ได้
 */
 
 .bad-span {
@@ -49,3 +49,4 @@
   padding: 8px;
   text-align: center;
 }
+

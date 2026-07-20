@@ -1,13 +1,13 @@
 /* ============================================
-   DEBUG — POSITION
-   Fix the positioning issues. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — POSITION (การจัดตำแหน่ง)
+   แก้ไขการจัดตำแหน่ง กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: Header stays at top, content starts below it.
-   Current: Header is fixed but content flows behind it.
-   Fix: Add one property to .page-main to push it below the header.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: ส่วนหัว (Header) อยู่คงที่ด้านบนสุด และเนื้อหา (Content) เริ่มต้นถัดลงมาจากส่วนหัว
+   สถานะปัจจุบัน: ส่วนหัวถูกตรึงไว้กับที่ แต่เนื้อหาไหลขึ้นไปซ้อนอยู่ด้านหลังส่วนหัว
+   วิธีแก้: เพิ่มคุณสมบัติ 1 ข้อให้กับ .page-main เพื่อดันให้มันลงมาอยู่ด้านล่างส่วนหัว
 */
 
 .page-header {
@@ -31,10 +31,10 @@
 }
 
 
-/* --- Bug 2 ---
-   Goal: "NEW" badge is in the top-right corner of the card.
-   Current: Badge is in normal flow, sitting above the text.
-   Fix by adding positioning to both .card-with-badge and .badge.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: ป้ายปัก "NEW" ควรแสดงผลอยู่ที่มุมขวาบนของการ์ด
+   สถานะปัจจุบัน: ป้ายแสดงผลเรียงต่อกันตามปกติ ดันข้อความอื่นลงมา
+   วิธีแก้: เพิ่มการจัดตำแหน่ง (positioning) ทั้งใน .card-with-badge และ .badge
 */
 
 .card-with-badge {
@@ -53,10 +53,10 @@
 }
 
 
-/* --- Bug 3 ---
-   Goal: Sidebar sticks when scrolling, content scrolls beside it.
-   Current: Everything scrolls together.
-   Fix .sidebar's position property.
+/* --- บั๊ก 3 ---
+   เป้าหมาย: แถบด้านข้าง (Sidebar) ตรึงอยู่กับที่เมื่อเลื่อนหน้าจอลง แต่เนื้อหาด้านข้างยังคงเลื่อนขึ้นลงได้
+   สถานะปัจจุบัน: ทุกอย่างเลื่อนขึ้นลงพร้อมกันทั้งหมด
+   วิธีแก้: แก้ไขคุณสมบัติ position ของ .sidebar
 */
 
 .layout {
@@ -75,3 +75,4 @@
 .scroll-content {
   flex: 1;
 }
+

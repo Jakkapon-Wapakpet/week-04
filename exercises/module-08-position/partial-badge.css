@@ -1,10 +1,10 @@
 /* ============================================
-   PARTIAL — BADGE OVERLAY
-   Replace each _____ with the correct value.
+   แบบฝึกหัดเติมคำ — BADGE OVERLAY (การซ้อนทับด้วยป้าย/ทูลทิป)
+   แทนที่ _____ ด้วยคุณสมบัติหรือค่าที่ถูกต้อง
    ============================================ */
 
 
-/* Task 1 — Badge positioned in top-right corner of product card */
+/* ภารกิจที่ 1 — ป้ายสินค้า (Badge) จัดตำแหน่งให้อยู่มุมขวาบนของบัตรสินค้า (product card) */
 .product-card {
   _____: relative;
   border: 1px solid #ddd;
@@ -24,7 +24,7 @@
 }
 
 
-/* Task 2 — Tooltip appears above the trigger on hover */
+/* ภารกิจที่ 2 — ทูลทิป (Tooltip) แสดงขึ้นด้านบนของปุ่มเป้าหมายเมื่อชี้เมาส์ (hover) */
 .tooltip-trigger {
   _____: relative;
   display: inline-block;
@@ -52,7 +52,7 @@
 }
 
 
-/* Task 3 — "Back to Top" button fixed to bottom-right of viewport */
+/* ภารกิจที่ 3 — ปุ่ม "Back to Top" (กลับขึ้นด้านบน) ถูกตรึงไว้ที่มุมขวาล่างของหน้าจอเบราว์เซอร์ (viewport) */
 .back-to-top {
   _____: fixed;
   _____: 20px;
@@ -62,3 +62,4 @@
   padding: 12px 20px;
   text-decoration: none;
 }
+

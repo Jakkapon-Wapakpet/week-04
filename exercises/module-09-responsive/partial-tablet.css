@@ -1,7 +1,7 @@
 /* ============================================
-   PARTIAL — TABLET LAYOUT
-   Complete the media query so at 768px+ the layout is 2 columns.
-   Below 768px, columns stack vertically.
+   แบบฝึกหัดเติมคำ — TABLET LAYOUT (โครงสร้างหน้าเว็บสำหรับแท็บเล็ต)
+   เติมเต็ม media query เพื่อให้หน้าจอขนาด 768px ขึ้นไป แสดงผลเลย์เอาต์แบบ 2 คอลัมน์
+   และหากต่ำกว่า 768px ให้คอลัมน์ต่างๆ จัดเรียงซ้อนกันในแนวตั้ง
    ============================================ */
 
 .responsive-layout {
@@ -22,7 +22,8 @@
 }
 
 
-/* --- Task ---
-   Add a media query for max-width: 767px that makes the layout stack.
-   Change .responsive-layout to flex-direction: column.
+/* --- ภารกิจ ---
+   เพิ่ม media query สำหรับ max-width: 767px เพื่อให้หน้าจอแสดงผลแนวตั้ง (stack)
+   ปรับเปลี่ยน .responsive-layout ให้เป็น flex-direction: column
 */
+

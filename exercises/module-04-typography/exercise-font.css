@@ -1,37 +1,43 @@
 /* ============================================
-   DEBUG — TYPOGRAPHY
-   Fix the font issues. Do NOT modify the HTML file.
+   แก้ไขบั๊ก — TYPOGRAPHY (การจัดแต่งตัวอักษร)
+   แก้ไขปัญหาเกี่ยวกับฟอนต์ กฎ: ห้ามแก้ไขไฟล์ HTML
    ============================================ */
 
 
-/* --- Bug 1 ---
-   Goal: If "FunkyFont" doesn't load, fall back to a sans-serif system font.
-   Current: No fallback at all.
-   Fix the font-family value to include a fallback.
+/* --- บั๊ก 1 ---
+   เป้าหมาย: หากฟอนต์ "FunkyFont" โหลดไม่สำเร็จ ให้ใช้ฟอนต์ระบบประเภทไม่มีหัว (sans-serif) เป็นฟอนต์สำรอง (fallback)
+   สถานะปัจจุบัน: ไม่มีฟอนต์สำรองเลย
+   วิธีแก้: แก้ไขค่าของ font-family เพื่อระบุฟอนต์สำรองลงไปด้วย
 */
 
 .fancy {
-  font-family: "FunkyFont", ;
+  font-family: "FunkyFont", sans-serif;
 }
 
 
-/* --- Bug 2 ---
-   Goal: .thin should be weight 300, .bold should be weight 700.
-   Current: The values below are wrong.
-   Fix the font-weight values.
+/* --- บั๊ก 2 ---
+   เป้าหมาย: .thin ควรมีความหนาอักษร (weight) เท่ากับ 300, และ .bold ควรมีความหนาเท่ากับ 700
+   สถานะปัจจุบัน: ค่าที่กำหนดด้านล่างนี้ไม่ถูกต้อง
+   วิธีแก้: แก้ไขค่าของ font-weight ให้ถูกต้อง
 */
 
 .thin {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .bold {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 
-/* --- Bug 3 ---
-   The HTML file is missing the Google Fonts <link> tag.
-   Open the HTML file and add the correct <link> from Google Fonts
-   to load "Roboto" at weights 400 and 700.
+/* --- บั๊ก 3 ---
+   ไฟล์ HTML ขาดแท็ก <link> ของ Google Fonts
+   ให้เปิดไฟล์ HTML และเพิ่มแท็ก <link> ที่ถูกต้องจาก Google Fonts
+   เพื่อโหลดฟอนต์ "Roboto" ที่มีความหนา (weight) 400 และ 700
 */
+
+.google-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+

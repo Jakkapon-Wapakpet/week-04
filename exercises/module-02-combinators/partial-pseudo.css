@@ -1,28 +1,29 @@
 /* ============================================
-   PARTIAL — PSEUDO-CLASSES
-   Replace each _____ with the correct selector.
+   แบบฝึกหัดเติมคำ — PSEUDO-CLASSES & COMBINATORS (คลาสเทียมและตัวเชื่อมต่อ)
+   แทนที่ _____ ด้วย selector ที่ถูกต้อง
    ============================================ */
 
 
-/* Task 1 — All <a> links should turn orange when hovered */
+/* ภารกิจที่ 1 — ลิงก์ <a> ทั้งหมดควรเปลี่ยนเป็นสีส้มเมื่อนำเมาส์ไปชี้ (hover) */
 _____ {
   color: orange;
 }
 
 
-/* Task 2 — The last <p> inside .list should have margin-bottom: 0 */
+/* ภารกิจที่ 2 — ย่อหน้า <p> ตัวสุดท้ายที่อยู่ภายใน class ".list" ควรกำหนด margin-bottom เป็น 0 */
 .list _____ {
   margin-bottom: 0;
 }
 
 
-/* Task 3 — Odd <tr> rows should have background: #f5f5f5 */
+/* ภารกิจที่ 3 — แถวตาราง <tr> ลำดับที่เป็นเลขคี่ (odd) ควรมีพื้นหลังสี #f5f5f5 */
 _____ {
   background: #f5f5f5;
 }
 
 
-/* Task 4 — All <p> elements that are siblings of (follow) an <h2> should have margin-left: 20px */
+/* ภารกิจที่ 4 — ย่อหน้า <p> ทั้งหมดที่เป็นพี่น้องตัวถัดไป (siblings) ของ <h2> ควรมี margin-left เป็น 20px */
 _____ {
   margin-left: 20px;
 }
+
