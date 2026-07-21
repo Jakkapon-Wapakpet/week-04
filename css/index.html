@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เรียนรู้ CSS flex-flow — ชุมชนสายโค้ด</title>
+  <!-- Google Fonts: Prompt & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="badge">CSS Flexbox Interactive Guide</div>
+    <h1>เรียนรู้คำสั่ง <span class="gradient-text">flex-flow</span> ใน CSS</h1>
+    <p class="subtitle">คำสั่งทางลัด (Shorthand) ที่รวม <code>flex-direction</code> + <code>flex-wrap</code> เข้าไว้ด้วยกันในบรรทัดเดียว</p>
+  </header>
+
+  <main class="main-layout">
+    
+    <!-- Left Column: Controls & Code Output -->
+    <aside class="control-panel">
+      
+      <!-- Preset Quick Buttons -->
+      <section class="card">
+        <h2>⚡ ทดลองชุดค่านิยม (Presets)</h2>
+        <div class="preset-buttons">
+          <button class="btn btn-preset" onclick="setFlexFlow('row', 'wrap')">
+            <code>row wrap</code>
+            <span>แนวนอน + ขึ้นแถวใหม่</span>
+          </button>
+          <button class="btn btn-preset" onclick="setFlexFlow('column', 'nowrap')">
+            <code>column nowrap</code>
+            <span>แนวตั้ง + ไม่ขึ้นแถวใหม่</span>
+          </button>
+          <button class="btn btn-preset" onclick="setFlexFlow('row-reverse', 'wrap-reverse')">
+            <code>row-reverse wrap-reverse</code>
+            <span>แนวนอนย้อนกลับ + ขึ้นแถวย้อนกลับ</span>
+          </button>
+          <button class="btn btn-preset" onclick="setFlexFlow('column', 'wrap')">
+            <code>column wrap</code>
+            <span>แนวตั้ง + ขึ้นคอลัมน์ใหม่</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Custom Selector Controls -->
+      <section class="card">
+        <h2>🛠️ ปรับค่าด้วยตัวเอง</h2>
+        
+        <div class="control-group">
+          <label class="control-label">1. ทิศทาง (flex-direction)</label>
+          <div class="button-grid" id="direction-buttons">
+            <button class="btn btn-option active" data-dir="row" onclick="changeDirection('row')">row</button>
+            <button class="btn btn-option" data-dir="row-reverse" onclick="changeDirection('row-reverse')">row-reverse</button>
+            <button class="btn btn-option" data-dir="column" onclick="changeDirection('column')">column</button>
+            <button class="btn btn-option" data-dir="column-reverse" onclick="changeDirection('column-reverse')">column-reverse</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">2. การขึ้นบรรทัดใหม่ (flex-wrap)</label>
+          <div class="button-grid" id="wrap-buttons">
+            <button class="btn btn-option active" data-wrap="nowrap" onclick="changeWrap('nowrap')">nowrap</button>
+            <button class="btn btn-option" data-wrap="wrap" onclick="changeWrap('wrap')">wrap</button>
+            <button class="btn btn-option" data-wrap="wrap-reverse" onclick="changeWrap('wrap-reverse')">wrap-reverse</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Code Output Display -->
+      <section class="card code-card">
+        <div class="code-header">
+          <span>CSS Output</span>
+          <button class="btn-copy" onclick="copyCode()" id="copy-btn">📋 ก๊อบปี้โค้ด</button>
+        </div>
+        <pre><code id="css-code-display">.container {
+  display: flex;
+  flex-flow: row nowrap;
+}</code></pre>
+      </section>
+
+    </aside>
+
+    <!-- Right Column: Interactive Live Preview & Knowledge -->
+    <section class="preview-area">
+      
+      <!-- Live Preview Header -->
+      <div class="preview-header">
+        <h2>👁️ แสดงผลจริง (Live Preview)</h2>
+        <span class="status-badge" id="current-flow-status">flex-flow: row nowrap</span>
+      </div>
+
+      <!-- Container Box Stage -->
+      <div class="stage-wrapper">
+        <div class="container" id="flex-container">
+          <div class="box box-1"><span>1</span></div>
+          <div class="box box-2"><span>2</span></div>
+          <div class="box box-3"><span>3</span></div>
+          <div class="box box-4"><span>4</span></div>
+          <div class="box box-5"><span>5</span></div>
+          <div class="box box-6"><span>6</span></div>
+          <div class="box box-7"><span>7</span></div>
+          <div class="box box-8"><span>8</span></div>
+          <div class="box box-9"><span>9</span></div>
+        </div>
+      </div>
+
+      <!-- Theory & Knowledge Section -->
+      <article class="card theory-card">
+        <h2>📚 สรุปความรู้เรื่อง <code>flex-flow</code></h2>
+        <p><code>flex-flow</code> คือคำสั่งลัด (Shorthand Property) ที่ช่วยลดรูปการเขียน CSS ของ Flex Container จาก 2 บรรทัดให้เหลือบรรทัดเดียว:</p>
+        
+        <div class="comparison-grid">
+          <div class="comparison-box">
+            <span class="tag tag-old">แบบเดิม (2 บรรทัด)</span>
+            <pre><code>.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}</code></pre>
+          </div>
+          <div class="comparison-box">
+            <span class="tag tag-new">แบบสั้นด้วย flex-flow (1 บรรทัด)</span>
+            <pre><code>.container {
+  display: flex;
+  flex-flow: row wrap;
+}</code></pre>
+          </div>
+        </div>
+
+        <h3>ไวยากรณ์ (Syntax)</h3>
+        <p class="syntax-highlight"><code>flex-flow: &lt;flex-direction&gt; &lt;flex-wrap&gt;;</code></p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    let currentDir = 'row';
+    let currentWrap = 'nowrap';
+
+    function updatePreview() {
+      const flexContainer = document.getElementById('flex-container');
+      const cssDisplay = document.getElementById('css-code-display');
+      const statusBadge = document.getElementById('current-flow-status');
+
+      // Update CSS inline style
+      flexContainer.style.flexFlow = `${currentDir} ${currentWrap}`;
+
+      // Update Code Text
+      cssDisplay.textContent = `.container {\n  display: flex;\n  flex-flow: ${currentDir} ${currentWrap};\n}`;
+      statusBadge.textContent = `flex-flow: ${currentDir} ${currentWrap}`;
+
+      // Update Active Buttons
+      document.querySelectorAll('#direction-buttons .btn-option').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-dir') === currentDir);
+      });
+      document.querySelectorAll('#wrap-buttons .btn-option').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-wrap') === currentWrap);
+      });
+    }
+
+    function changeDirection(dir) {
+      currentDir = dir;
+      updatePreview();
+    }
+
+    function changeWrap(wrap) {
+      currentWrap = wrap;
+      updatePreview();
+    }
+
+    function setFlexFlow(dir, wrap) {
+      currentDir = dir;
+      currentWrap = wrap;
+      updatePreview();
+    }
+
+    function copyCode() {
+      const codeText = document.getElementById('css-code-display').textContent;
+      navigator.clipboard.writeText(codeText).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = '✅ คัดลอกแล้ว!';
+        setTimeout(() => {
+          btn.textContent = '📋 ก๊อบปี้โค้ด';
+        }, 2000);
+      });
+    }
+
+    // Initial setup
+    updatePreview();
+  </script>
+</body>
+</html>
