@@ -174,6 +174,49 @@
         <p class="syntax-highlight"><code>flex-flow: &lt;flex-direction&gt; &lt;flex-wrap&gt;;</code></p>
       </article>
 
+      <!-- Impact on Other Flexbox Properties Card -->
+      <article class="card impact-card">
+        <h2>🔗 ผลกระทบของ <code>flex-flow</code> ต่อคำสั่ง Flexbox อื่น ๆ</h2>
+        <p class="impact-intro">การเปลี่ยนค่าใน <code>flex-flow</code> (โดยเฉพาะ <code>flex-direction</code> และ <code>flex-wrap</code>) ส่งผลโดยตรงต่อการทำงานของคำสั่ง Flexbox ตัวอื่น ๆ ดังนี้:</p>
+        
+        <div class="impact-grid">
+          
+          <div class="impact-box">
+            <div class="impact-header">
+              <span class="impact-icon">🔄</span>
+              <h4>1. สลับแกนหลักของ <code>justify-content</code> และ <code>align-items</code></h4>
+            </div>
+            <ul>
+              <li>ถ้า <code>row</code> (แนวนอน): <code>justify-content</code> จัดแนวนอน / <code>align-items</code> จัดแนวตั้ง</li>
+              <li>ถ้า <code>column</code> (แนวตั้ง): <strong>แกนจะสลับกัน!</strong> <code>justify-content</code> จะไปจัดแนวตั้งแทน ส่วน <code>align-items</code> จะไปจัดแนวนอน</li>
+            </ul>
+          </div>
+
+          <div class="impact-box">
+            <div class="impact-header">
+              <span class="impact-icon">📦</span>
+              <h4>2. มีผลต่อคำสั่ง <code>align-content</code></h4>
+            </div>
+            <ul>
+              <li>คำสั่ง <code>align-content</code> (ระยะห่างระหว่างบรรทัด) จะทำงาน <strong>เฉพาะเมื่อ <code>flex-wrap</code> เป็น <code>wrap</code> หรือ <code>wrap-reverse</code> เท่านั้น</strong></li>
+              <li>ถ้าตั้งค่า <code>flex-wrap: nowrap;</code> คำสั่ง <code>align-content</code> จะไร้ผลทันที!</li>
+            </ul>
+          </div>
+
+          <div class="impact-box">
+            <div class="impact-header">
+              <span class="impact-icon">📏</span>
+              <h4>3. ควบคุมมิติของ <code>flex-basis</code> ในตัวลูก</h4>
+            </div>
+            <ul>
+              <li>ถ้าทิศทางเป็น <code>row</code>: <code>flex-basis</code> จะส่งผลต่อความกว้าง (Width)</li>
+              <li>ถ้าทิศทางเป็น <code>column</code>: <code>flex-basis</code> จะส่งผลต่อความสูง (Height) แทน</li>
+            </ul>
+          </div>
+
+        </div>
+      </article>
+
     </section>
 
   </main>
