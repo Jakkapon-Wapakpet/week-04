@@ -1,0 +1,18 @@
+/* Custom styling supplementing Tailwind CSS */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Card image accent backdrop effect */
+.accent-bg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Button hover micro-animation */
+.learn-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generation Non-Profit Card</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <!-- Red Box: Container (display: flex; flex-direction: row) -->
+  <div class="container-card bg-white rounded-3xl p-8 max-w-4xl shadow-xl flex flex-col md:flex-row gap-8 items-center">
+    
+    <!-- Green Box: Image Wrapper -->
+    <div class="image-box relative w-full md:w-1/2 flex-shrink-0">
+      <!-- Blue Accent Shadow Block behind the image -->
+      <div class="accent-bg bg-[#0060ad] rounded-2xl absolute inset-0 translate-x-2.5 translate-y-3.5"></div>
+      
+      <!-- Portrait Image -->
+      <img 
+        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+        alt="Smiling man" 
+        class="relative z-10 rounded-2xl w-full h-[340px] object-cover shadow-sm"
+      >
+    </div>
+
+    <!-- Orange Box: Content Container (display: flex; flex-direction: column) -->
+    <div class="content-box flex flex-col justify-between gap-6 w-full md:w-1/2">
+      
+      <!-- Top Heading -->
+      <h1 class="text-3xl font-extrabold text-slate-900 leading-tight tracking-tight">
+        Generation is a global nonprofit that believes in the power of jobs to change lives
+      </h1>
+
+      <!-- Middle Paragraph -->
+      <p class="text-slate-600 text-sm leading-relaxed">
+        We train and place adults into careers that would otherwise be inaccessible. And we advocate to improve the workforce system. Launched in 2015, Generation comprises a global hub and a network of in-country affiliates that span 17 countries.
+      </p>
+
+      <!-- Bottom Button -->
+      <div>
+        <button class="learn-btn inline-flex items-center gap-2 bg-[#9cd3f7] hover:bg-[#85c6f3] text-slate-900 font-semibold px-5 py-2.5 rounded-full border border-slate-900 shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all active:translate-y-0.5">
+          <span>Learn more about us</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
