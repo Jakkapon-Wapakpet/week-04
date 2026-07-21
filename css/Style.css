@@ -95,6 +95,71 @@ body {
 }
 
 /* ============================================
+   HERO INTRO BOX
+   ============================================ */
+.hero-intro-box {
+  margin-top: 24px;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.intro-tag {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.intro-desc {
+  font-size: 0.96rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.hl-blue code {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hl-purple code {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.intro-formula {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-color);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+
+.intro-formula span {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.intro-formula code {
+  color: #6ee7b7;
+  font-family: 'Consolas', monospace;
+  font-weight: bold;
+}
+
+/* ============================================
    GUIDE SECTION
    ============================================ */
 .guide-card {
