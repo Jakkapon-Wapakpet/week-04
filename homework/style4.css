@@ -1,0 +1,209 @@
+/* รีเซ็ตค่า Margin, Padding และ Box Model */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* กำหนดสไตล์หลักของหน้าเว็บ */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #0b1a28;
+  display: flex;
+  justify-content: center;   /* จัดกลางแนวนอน */
+  align-items: center;       /* จัดกลางแนวตั้ง */
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+/* กล่องครอบแดชบอร์ดหลัก */
+.container {
+  width: 100%;
+  max-width: 1140px;
+}
+
+/* การ์ดแดชบอร์ด */
+.impact-card {
+  background-color: #f6f8fa; /* พื้นหลังการ์ดสีเทาอ่อน */
+  border: 1px solid #2b2b2b;  /* เส้นขอบสีเข้ม */
+  padding: 44px 44px 54px 44px;
+}
+
+/* ส่วนหัวของการ์ด */
+.header {
+  margin-bottom: 40px;
+}
+
+/* ข้อความหมวดหมู่ย่อยด้านบน */
+.overline {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0b1a28;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* หัวข้อใหญ่หลัก */
+.headline {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0b1a28;
+  letter-spacing: -0.02em;
+}
+
+/* ระบบจัดเรียง 3 คอลัมน์ด้วย CSS Grid */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* แบ่งเป็น 3 คอลัมน์เท่าๆ กัน */
+  gap: 36px;                              /* ระยะห่างระหว่างคอลัมน์ */
+}
+
+/* ชื่อคอลัมน์ */
+.col-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1a28;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+/* รายละเอียดคอลัมน์ */
+.col-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  min-height: 44px;
+}
+
+/* บล็อกตัวเลขสถิติ */
+.stat-block {
+  margin-bottom: 24px;
+}
+
+/* สไตล์พื้นฐานของป้ายแคปซูล */
+.pill {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 8px 24px;
+  margin-bottom: 10px;
+}
+
+/* แคปซูลสีน้ำเงิน */
+.pill-blue {
+  background-color: #007ac3;
+}
+
+.pill-blue .pill-number {
+  color: #ffffff;
+}
+
+/* แคปซูลสีเขียว */
+.pill-green {
+  background-color: #27b357;
+}
+
+.pill-green .pill-number {
+  color: #0b1a28;
+}
+
+/* แคปซูลสีเหลือง */
+.pill-yellow {
+  background-color: #ffcd38;
+}
+
+.pill-yellow .pill-number {
+  color: #0b1a28;
+}
+
+/* ตัวเลขสถิติในแคปซูล */
+.pill-number {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ข้อความอธิบายสถิติ */
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0b1a28;
+}
+
+/* ปุ่มกดยอดนิยมสไตล์ Neo-brutalism */
+.impact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  border: 2px solid #0b1a28;
+  box-shadow: 3px 3px 0px #0b1a28; /* เงาแบบแข็งเน้นขอบ */
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0b1a28;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.impact-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #0b1a28;
+}
+
+/* ป้ายข้อความฝั่งคอลัมน์ Durability */
+.alumni-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0b1a28;
+  margin-bottom: 16px;
+}
+
+/* แถบแคปซูล 3 ช่องเรียงแนวนอน */
+.durability-row {
+  display: flex;
+  gap: 12px;
+}
+
+.durability-item {
+  flex: 1;
+}
+
+.durability-item .pill {
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.durability-item .pill-number {
+  font-size: 2.2rem;
+}
+
+.durability-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0b1a28;
+}
+
+/* รองรับการแสดงผลบนหน้าจอขนาดเล็ก (Responsive Design) */
+@media (max-width: 992px) {
+  .impact-grid {
+    grid-template-columns: 1fr; /* ปรับเหลือ 1 คอลัมน์เรียงต่อกันเป็นแนวตั้ง */
+    gap: 40px;
+  }
+
+  .col-subtitle {
+    min-height: auto;
+  }
+}

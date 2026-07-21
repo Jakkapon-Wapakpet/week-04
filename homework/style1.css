@@ -1,0 +1,71 @@
+/* รีเซ็ตค่า Margin, Padding และกำหนด Box Model มาตรฐาน */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* กำหนดสไตล์หลักของตัวเอกสารและการวางตำแหน่งกลางหน้าจอ */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f0f2f5; /* สีพื้นหลังของหน้าเว็บ */
+  color: #0b1a28;            /* สีข้อความหลัก */
+  display: flex;
+  justify-content: center;   /* จัดการ์ดให้อยู่กลางแนวนอน */
+  align-items: center;       /* จัดการ์ดให้อยู่กลางแนวตั้ง */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* กล่องครอบการ์ดจำกัดความกว้างสูงสุด */
+.container {
+  width: 100%;
+  max-width: 680px;
+}
+
+/* ตัวโครงสร้างการ์ดพร้อมขอบและเส้นแถบสีน้ำเงินด้านบน */
+.card {
+  border: 1px solid #1c2d3d;     /* เส้นขอบรอบการ์ด */
+  border-top: 5px solid #005691; /* แถบเส้นสีน้ำเงินหนาด้านบน */
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* เงาบางๆ เพิ่มมิติ */
+}
+
+/* ส่วนหัวของการ์ด */
+.card-header {
+  background-color: #f6f7f8;     /* สีพื้นหลังสีเทาอ่อนส่วนหัว */
+  padding: 32px 36px 24px 36px;  /* ระยะขอบภายในส่วนหัว */
+}
+
+/* หัวข้อหลัก */
+.card-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #0b1a28;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+/* ข้อความอธิบายรายละเอียด */
+.card-description {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #0b1a28;
+  max-width: 580px;
+}
+
+/* กล่องหุ้มรูปภาพเพื่อลบช่องว่างใต้ภาพ */
+.card-image-wrapper {
+  width: 100%;
+  line-height: 0;
+}
+
+/* รูปภาพประกอบวางเต็มความกว้าง */
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

@@ -1,0 +1,86 @@
+/* รีเซ็ตค่า Margin, Padding และ Box Model */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* กำหนดสไตล์หลักของตัวเอกสารและการวางตำแหน่งกลางหน้าจอ */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #0b1a28;
+  display: flex;
+  justify-content: center;   /* จัดการ์ดให้อยู่กลางแนวนอน */
+  align-items: center;       /* จัดการ์ดให้อยู่กลางแนวตั้ง */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* กล่องครอบการ์ดจำกัดความกว้างสูงสุด */
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ตัวการ์ดแสดงสถิติ */
+.card {
+  background-color: #f7f8fa; /* สีพื้นหลังการ์ดสีเทาอ่อน */
+  border: 1px solid #2b2b2b;  /* เส้นขอบสีเข้ม */
+  padding: 40px 36px 60px 36px;
+}
+
+/* หัวข้อหลัก */
+.card-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #0b1a28;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+/* คำอธิบายรอง */
+.card-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #1c2d3d;
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+
+/* กลุ่มบล็อกสถิติ */
+.stat-group {
+  margin-bottom: 28px;
+}
+
+.stat-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ป้ายแคปซูลสีเขียวล้อมรอบตัวเลข */
+.stat-pill {
+  display: inline-block;
+  background-color: #27b357; /* สีพื้นหลังแคปซูลสีเขียวสด */
+  border-radius: 24px;       /* ทำมุมโค้งมนทรงแคปซูล */
+  padding: 10px 24px;
+  margin-bottom: 12px;
+}
+
+/* ตัวเลขสถิติขนาดใหญ่ */
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0b1a28;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ข้อความอธิบายใต้สถิติ */
+.stat-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0b1a28;
+  max-width: 400px;
+}
