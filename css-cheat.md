@@ -132,7 +132,10 @@
   - `nowrap`: (ค่าเริ่มต้น) บีบให้อยู่ในบรรทัดเดียวเสมอไม่ว่าพื้นที่พอหรือไม่
   - `wrap`: ให้ขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ
   - `wrap-reverse`: ขึ้นบรรทัดใหม่แต่ย้อนทิศทางขึ้นไปด้านบน
-- `flex-flow`: คำสั่งลัด (Shorthand) รวม `flex-direction` + `flex-wrap` ไว้ในคำสั่งเดียว (เช่น `flex-flow: row wrap;`)
+- `flex-flow`: คำสั่งลัด (Shorthand) รวม `flex-direction` และ `flex-wrap` เข้าด้วยกันในบรรทัดเดียว (รูปแบบ: `flex-flow: <flex-direction> <flex-wrap>;`)
+  - `flex-flow: row wrap;`: วางเรียงแนวนอน และขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ
+  - `flex-flow: column nowrap;`: วางเรียงแนวตั้ง และห้ามขึ้นบรรทัดใหม่ (บีบในคอลัมน์เดียว)
+  - `flex-flow: row-reverse wrap;`: วางเรียงแนวนอนย้อนกลับจากขวาไปซ้าย และขึ้นบรรทัดใหม่ได้
 - `justify-content`: จัดเรียง Flex Items ตาม **แกนหลัก (Main Axis)**
   - `flex-start`: (ค่าเริ่มต้น) ชิดจุดเริ่มต้นของแกน
   - `flex-end`: ชิดจุดสิ้นสุดของแกน
