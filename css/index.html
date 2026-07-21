@@ -109,6 +109,29 @@
         </div>
       </section>
 
+      <!-- Size Controls Section -->
+      <section class="card">
+        <h2>📐 ปรับขนาด (Size Controls)</h2>
+        
+        <div class="control-group">
+          <label class="control-label">ความกว้าง Container</label>
+          <div class="button-grid" id="container-size-buttons">
+            <button class="btn btn-option" data-csize="380px" onclick="changeContainerSize('380px')">เล็ก (380px)</button>
+            <button class="btn btn-option" data-csize="550px" onclick="changeContainerSize('550px')">กลาง (550px)</button>
+            <button class="btn btn-option active" data-csize="100%" onclick="changeContainerSize('100%')">เต็ม (100%)</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">ขนาดของ Box (ตัวลูก)</label>
+          <div class="button-grid" id="box-size-buttons">
+            <button class="btn btn-option" data-bsize="60px" onclick="changeBoxSize('60px')">เล็ก (60px)</button>
+            <button class="btn btn-option active" data-bsize="80px" onclick="changeBoxSize('80px')">กลาง (80px)</button>
+            <button class="btn btn-option" data-bsize="110px" onclick="changeBoxSize('110px')">ใหญ่ (110px)</button>
+          </div>
+        </div>
+      </section>
+
       <!-- Code Output Display -->
       <section class="card code-card">
         <div class="code-header">
@@ -225,25 +248,43 @@
   <script>
     let currentDir = 'row';
     let currentWrap = 'nowrap';
+    let currentContainerSize = '100%';
+    let currentBoxSize = '80px';
 
     function updatePreview() {
       const flexContainer = document.getElementById('flex-container');
       const cssDisplay = document.getElementById('css-code-display');
       const statusBadge = document.getElementById('current-flow-status');
 
-      // Update CSS inline style
+      // Apply styles to container
       flexContainer.style.flexFlow = `${currentDir} ${currentWrap}`;
+      flexContainer.style.width = currentContainerSize;
 
-      // Update Code Text
-      cssDisplay.textContent = `.container {\n  display: flex;\n  flex-flow: ${currentDir} ${currentWrap};\n}`;
+      // Apply styles to all boxes
+      document.querySelectorAll('.box').forEach(box => {
+        box.style.width = currentBoxSize;
+        box.style.height = currentBoxSize;
+        box.style.minWidth = currentBoxSize;
+        box.style.minHeight = currentBoxSize;
+        box.style.fontSize = currentBoxSize === '60px' ? '1.1rem' : (currentBoxSize === '110px' ? '1.8rem' : '1.5rem');
+      });
+
+      // Update Code Text Display
+      cssDisplay.textContent = `.container {\n  display: flex;\n  flex-flow: ${currentDir} ${currentWrap};\n  width: ${currentContainerSize};\n}\n\n.box {\n  width: ${currentBoxSize};\n  height: ${currentBoxSize};\n}`;
       statusBadge.textContent = `flex-flow: ${currentDir} ${currentWrap}`;
 
-      // Update Active Buttons
+      // Update Active Buttons UI
       document.querySelectorAll('#direction-buttons .btn-option').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-dir') === currentDir);
       });
       document.querySelectorAll('#wrap-buttons .btn-option').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-wrap') === currentWrap);
+      });
+      document.querySelectorAll('#container-size-buttons .btn-option').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-csize') === currentContainerSize);
+      });
+      document.querySelectorAll('#box-size-buttons .btn-option').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-bsize') === currentBoxSize);
       });
     }
 
@@ -254,6 +295,16 @@
 
     function changeWrap(wrap) {
       currentWrap = wrap;
+      updatePreview();
+    }
+
+    function changeContainerSize(size) {
+      currentContainerSize = size;
+      updatePreview();
+    }
+
+    function changeBoxSize(size) {
+      currentBoxSize = size;
       updatePreview();
     }
 
