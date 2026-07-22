@@ -1,36 +1,36 @@
 /* ==========================================================================
-   AS COLOUR STYLE SHEET
+   แผ่นสไตล์ชีตจำลองของร้าน AS COLOUR
    ========================================================================== */
 
-/* Custom Fonts & Variables */
+/* กำหนดแบบอักษรและตัวแปรส่วนกลาง */
 :root {
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-    /* Premium Color Palette */
+    /* จานสีระดับพรีเมียม */
     --color-bg: #f8f9fa;
     --color-text-dark: #111111;
     --color-text-muted: #666666;
     --color-text-light: #ffffff;
 
-    /* Accents */
+    /* สีเน้นและเส้นขอบ */
     --color-cta-blue: #97b9d3;
-    /* Pastel steel blue matching "Create Account" */
+    /* โทนสีฟ้าพาสเทลสำหรับปุ่มสร้างบัญชี */
     --color-cta-blue-hover: #7ea3c0;
-    /* Darker tone for CTA hover */
+    /* โทนสีเข้มขึ้นสำหรับเวลาชี้เมาส์ปุ่ม CTA */
     --color-border: #e2e8f0;
 
-    /* Bottom Promo Banner (Impressions Expo) */
+    /* แบนเนอร์โปรโมชันด้านล่างสุด (Impressions Expo) */
     --expo-grad-start: #d33c82;
-    /* Vibrant fuchsia/pink */
+    /* เฉดสีชมพูฟูเชียสดใส */
     --expo-grad-end: #77124c;
-    /* Deep grape/purple */
+    /* เฉดสีม่วงเข้มองุ่น */
 
-    /* Animation Timings */
+    /* การตั้งค่าเวลาแอนิเมชัน */
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.2s ease-in-out;
 }
 
-/* Base resets & box-sizing */
+/* รีเซ็ตค่าเริ่มต้นและขนาดกล่อง */
 *,
 *::before,
 *::after {
@@ -56,7 +56,7 @@ a {
     text-decoration: none;
 }
 
-/* Custom Scrollbar */
+/* แถบเลื่อนสกรอลบาร์แบบตกแต่งพิเศษ */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -75,7 +75,7 @@ a {
 }
 
 /* ==========================================================================
-   1. PROMO & ANNOUNCEMENT BAR
+   1. แถบโปรโมชันและแถบประกาศด้านบนสุด
    ========================================================================== */
 .promo-bar {
     background-color: #000000;
@@ -112,7 +112,7 @@ a {
 }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION
+   2. ส่วนหัวของเว็บและการนำทาง (Header & Navigation)
    ========================================================================== */
 .site-header {
     background-color: rgba(255, 255, 255, 0.95);
@@ -134,7 +134,7 @@ a {
     justify-content: space-between;
 }
 
-/* Brand Logo */
+/* โลโก้แบรนด์ */
 .logo {
     font-size: 24px;
     font-weight: 800;
@@ -148,7 +148,7 @@ a {
     color: var(--color-text-dark);
 }
 
-/* Navigation Menu */
+/* รายการลิงก์เมนูนำทางหลัก */
 .nav-categories {
     display: flex;
     align-items: center;
@@ -188,7 +188,7 @@ a {
     transform-origin: left;
 }
 
-/* Utilities Menu & Account CTA */
+/* ส่วนนำทางเครื่องมือเสริมด้านขวา */
 .nav-utilities {
     display: flex;
     align-items: center;
@@ -206,7 +206,7 @@ a {
     opacity: 0.7;
 }
 
-/* Create Account Pill Button */
+/* ปุ่มแคปซูลสร้างบัญชีผู้ใช้ */
 .btn-create-account {
     background-color: var(--color-cta-blue);
     color: var(--color-text-light);
@@ -230,14 +230,14 @@ a {
 }
 
 /* ==========================================================================
-   3. HERO BANNER SECTION (Split 50/50)
+   3. ส่วนแบนเนอร์หลักบนสุด (แบ่งครึ่ง 50/50)
    ========================================================================== */
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 72vh;
-    /* Fills screen beautifully without taking it over completely */
+    /* กำหนดสัดส่วนความสูงให้หน้าเว็บแสดงผลรูปได้ใหญ่เต็มตาพอดิบพอดี */
     overflow: hidden;
 }
 
@@ -252,7 +252,7 @@ a {
     cursor: pointer;
 }
 
-/* Background image handling with smooth hover scale */
+/* จัดการภาพพื้นหลังและระบบย่อขยายเมื่อเมาส์ชี้ */
 .hero-card .card-bg {
     position: absolute;
     top: 0;
@@ -265,7 +265,7 @@ a {
     z-index: 1;
 }
 
-/* Left/Right specific positioning adjustments if needed */
+/* การปรับสัดส่วนรูปซ้าย/ขวาเป็นพิเศษถ้าจำเป็น */
 .hero-card.womens .card-bg {
     background-position: center 30%;
 }
@@ -274,7 +274,7 @@ a {
     transform: scale(1.03);
 }
 
-/* Overlay for text readability */
+/* แผ่นฟิล์มดำกึ่งโปร่งแสงเพื่อช่วยให้อ่านหนังสือได้ง่ายขึ้น */
 .hero-card .card-overlay {
     position: absolute;
     top: 0;
@@ -294,7 +294,7 @@ a {
             rgba(0, 0, 0, 0.3) 100%);
 }
 
-/* Text Container */
+/* กล่องครอบข้อความหลัก */
 .hero-card .card-content {
     position: relative;
     z-index: 3;
@@ -313,7 +313,7 @@ a {
     transform: translateY(-5px);
 }
 
-/* Divider line between grid items */
+/* เส้นขีดคั่นกลางระหว่างคอลัมน์ */
 .hero-card:first-child::after {
     content: '';
     position: absolute;
@@ -326,14 +326,14 @@ a {
 }
 
 /* ==========================================================================
-   4. SHOWCASE GRID SECTION (4-Column Layout)
+   4. ส่วนกล่องหมวดหมู่สินค้าแนะนำ (เลย์เอาต์ 4 คอลัมน์)
    ========================================================================== */
 .showcase-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     height: 28vh;
-    /* Proportionate bottom row height */
+    /* สัดส่วนความสูงของการ์ดด้านล่าง */
     overflow: hidden;
 }
 
@@ -348,7 +348,7 @@ a {
     padding: 30px;
 }
 
-/* General card backgrounds */
+/* การตั้งค่าพื้นหลังทั่วไปของการ์ด */
 .showcase-card .card-bg {
     position: absolute;
     top: 0;
@@ -365,7 +365,7 @@ a {
     transform: scale(1.05);
 }
 
-/* Product Titles */
+/* ชื่อเรียกตัวสินค้า */
 .product-content {
     position: relative;
     z-index: 3;
@@ -379,7 +379,7 @@ a {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Card divider lines */
+/* เส้นแบ่งเขตระหว่างกล่อง */
 .showcase-card:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -391,7 +391,7 @@ a {
     z-index: 4;
 }
 
-/* 4a. SPECIAL EXPO CARD DESIGN (Column 1) */
+/* 4a. ดีไซน์การ์ด EXPO พิเศษ (คอลัมน์ที่ 1) */
 .expo-card {
     background: linear-gradient(135deg, var(--expo-grad-start), var(--expo-grad-end));
     display: flex;
@@ -400,7 +400,7 @@ a {
     align-items: flex-start;
 }
 
-/* Overlaying soft noise / canvas pattern */
+/* การตกแต่งลวดลายตาข่ายจุดสีขาวโปร่งแสง */
 .expo-bg {
     position: absolute;
     top: 0;
@@ -455,7 +455,7 @@ a {
     display: inline-block;
 }
 
-/* Strike-through line under "expo" matching original logo styling */
+/* เส้นขีดใต้คำว่า expo ให้คล้ายกับต้นฉบับดั้งเดิม */
 .expo-title::after {
     content: '';
     position: absolute;
@@ -489,7 +489,7 @@ a {
 }
 
 /* ==========================================================================
-   5. SUPPORT FLOATING WIDGET
+   5. ปุ่มลอยบริการสนับสนุนแชท (Support Widget)
    ========================================================================== */
 .support-widget {
     position: fixed;
@@ -521,7 +521,7 @@ a {
 }
 
 /* ==========================================================================
-   5c. MOBILE HAMBURGER TOGGLE & DRAWER MENU STYLING [NEW]
+   5c. สไตล์เมนูแฮมเบอร์เกอร์และกล่องเมนูดันขอบสไลด์มือถือ [NEW]
    ========================================================================== */
 
 /* ปุ่มแฮมเบอร์เกอร์เมนูสำหรับหน้าจอขนาดเล็ก (ออกแบบมินิมอล) */
@@ -671,10 +671,10 @@ a {
 
 
 /* ==========================================================================
-   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   6. การออกแบบจัดตามอุปกรณ์หน้าจอ (Responsive Web Design)
    ========================================================================== */
 
-/* 6a. Tablet Landscape and Smaller Laptops */
+/* 6a. หน้าจอแท็บเล็ตแนวนอนและโน้ตบุ๊กขนาดเล็ก */
 @media (max-width: 1200px) {
     .nav-categories {
         gap: 15px;
@@ -686,7 +686,7 @@ a {
     }
 }
 
-/* 6b. Table Portrait / Small Screen */
+/* 6b. หน้าจอแท็บเล็ตแนวตั้ง / หน้าจอขนาดเล็ก */
 @media (max-width: 992px) {
 
     /* ซ่อนลิงก์บางส่วนในแท็บเล็ตเพื่อประหยัดพื้นที่ */
@@ -783,7 +783,7 @@ a {
 }
 
 /* ==========================================================================
-   KEYFRAME ANIMATIONS
+   การประกาศท่วงทำนองแอนิเมชัน (Keyframe Animations)
    ========================================================================== */
 @keyframes slideDown {
     from {
@@ -796,7 +796,7 @@ a {
 }
 
 /* ==========================================================================
-   7. BRAND VALUES SECTION
+   7. ส่วนจุดเด่นคุณค่าของแบรนด์ (Brand Values Section)
    ========================================================================== */
 .brand-values {
     background-color: var(--color-text-light);
@@ -842,7 +842,7 @@ a {
 }
 
 /* ==========================================================================
-   8. FEATURED PRODUCTS (NEW ARRIVALS)
+   8. รายการแนะนำสินค้ามาใหม่ (New Arrivals)
    ========================================================================== */
 .featured-products {
     background-color: var(--color-bg);
@@ -930,7 +930,7 @@ a {
     background-color: #c93b3b;
 }
 
-/* Quick Add Overlay on hover */
+/* แถบปุ่ม Quick Add ลอยขึ้นมาเมื่อเอาเมาส์จ่อรูปภาพ */
 .quick-add-overlay {
     position: absolute;
     bottom: 0;
@@ -969,7 +969,7 @@ a {
     color: var(--color-text-light);
 }
 
-/* Product Information Info area */
+/* ข้อมูลสรุปของสินค้า */
 .product-info {
     display: flex;
     flex-direction: column;
@@ -1021,7 +1021,7 @@ a {
     color: var(--color-text-dark);
 }
 
-/* Swatches styling */
+/* ปุ่มเลือกวงกลมสีสินค้า */
 .color-swatches {
     display: flex;
     gap: 8px;
@@ -1053,7 +1053,7 @@ a {
     border-radius: 50%;
 }
 
-/* Color definitions */
+/* นิยามกลุ่มสีสำหรับปุ่ม Swatch */
 .swatch.white {
     background-color: #ffffff;
 }
@@ -1091,7 +1091,7 @@ a {
 }
 
 /* ==========================================================================
-   9. EDITORIAL JOURNAL BANNER
+   9. แบนเนอร์หน้าบทความวารสาร (Journal Banner)
    ========================================================================== */
 .journal-banner {
     position: relative;
@@ -1179,7 +1179,7 @@ a {
 }
 
 /* ==========================================================================
-   10. SITE FOOTER SECTION
+   10. ส่วนท้ายเว็บไซต์ (Footer Section)
    ========================================================================== */
 .site-footer {
     background-color: var(--color-text-light);
@@ -1212,7 +1212,7 @@ a {
     line-height: 1.6;
 }
 
-/* Newsletter Signup styles */
+/* กล่องสำหรับกรอกสมัครรับจดหมายข่าว */
 .newsletter-form {
     display: flex;
     align-items: center;
@@ -1255,7 +1255,7 @@ a {
     transform: translateX(4px);
 }
 
-/* Footer Link Columns styles */
+/* การจัดรูปแบบคอลัมน์ลิงก์สารบัญท้ายเว็บ */
 .footer-col-title {
     font-size: 12px;
     font-weight: 700;
@@ -1282,7 +1282,7 @@ a {
     padding-left: 2px;
 }
 
-/* Footer Bottom Strip Area */
+/* แถบลิขสิทธิ์ด้านล่างสุดของ Footer */
 .footer-bottom {
     border-top: 1px solid var(--color-border);
     margin-top: 80px;
@@ -1302,7 +1302,7 @@ a {
     color: var(--color-text-muted);
 }
 
-/* Social links icons */
+/* ลิงก์ช่องทางโซเชียลมีเดีย */
 .social-links {
     display: flex;
     gap: 20px;
@@ -1321,7 +1321,7 @@ a {
 }
 
 /* ==========================================================================
-   11. ADDITIONAL RESPONSIVE BREAKPOINTS (EXPANSION)
+   11. จุดกึ่งกลางหน้าจอแบบ Responsive เพิ่มเติม (ขยายการรองรับ)
    ========================================================================== */
 
 @media (max-width: 1200px) {
