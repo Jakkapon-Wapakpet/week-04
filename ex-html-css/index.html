@@ -349,5 +349,37 @@
         </svg>
     </button>
 
+    <!-- ⚡ สคริปต์ตรวจจับพิกัดสกรอลเมาส์ (Intersection Observer) เพื่อทำแอนิเมชันการลอยขึ้นเมื่อเลื่อนจอมาถึง -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // อิงขอบเขตการเห็นตามเบราว์เซอร์จริง (Viewport)
+                rootMargin: '0px',
+                threshold: 0.12 // เริ่มต้นทำงานเมื่อชิ้นส่วนโผล่เข้าจอมาแล้ว 12%
+            };
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // สั่งให้กล่องลอยขึ้นและแสดงผลเมื่อเลื่อนมาเจอ
+                        entry.target.classList.add('visible');
+                        // เมื่อแสดงแล้ว ให้ยกเลิกการสังเกตการณ์เพื่อความลื่นไหลและประหยัดการทำงานบราวเซอร์
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // ค้นหากล่ององค์ประกอบด้านล่างทั้งหมดที่จะแสดงผลตอนสกรอล (รวม New Arrivals, Showcase และจุดเด่นของแบรนด์)
+            const scrollAnimatedItems = document.querySelectorAll('.showcase-card, .value-item, .product-item, .journal-banner');
+            
+            scrollAnimatedItems.forEach(item => {
+                // เพิ่มคลาสสไตล์ตั้งต้นสำหรับลอยเข้า
+                item.classList.add('scroll-trigger');
+                // สั่งให้ระบบเริ่มเฝ้าติดตามชิ้นส่วนนั้นๆ
+                scrollObserver.observe(item);
+            });
+        });
+    </script>
+
 </body>
 </html>

@@ -1204,3 +1204,69 @@ a {
     }
 }
 
+
+/* ==========================================================================
+   5. INTERACTIVE SCROLL ANIMATION (แอนิเมชันลอยเข้าแยกตามการเลื่อนหน้าจอ)
+   ========================================================================== */
+
+/* 5a. สำหรับองค์ประกอบบนสุด (Above the Fold) - แสดงผลลอยทันทีเมื่อเปิดหน้าเว็บ */
+@keyframes floatInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-card {
+    opacity: 0;
+    animation: floatInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-card.mens {
+    animation-delay: 0.1s;
+}
+.hero-card.womens {
+    animation-delay: 0.25s;
+}
+
+/* 5b. สำหรับองค์ประกอบด้านล่าง (Below the Fold) - ซ่อนไว้ก่อนและจะแสดงตัวเมื่อสกรอลล์จอลงมาถึง */
+.scroll-trigger {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity; /* ช่วยเร่งการประมวลผลการเคลื่อนไหวผ่าน GPU */
+}
+
+/* คลาสที่บราวเซอร์จะแปะให้ผ่าน Javascript เมื่อเนื้อหามาอยู่ในพื้นที่สายตา */
+.scroll-trigger.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ตั้งค่าการหน่วงเวลาเปิดตัวแบบทีละขั้นตอน (Staggered Delays) ของสินค้าในแนวเดียวกัน */
+
+/* หมวดหมู่สินค้าแนะนำ */
+.showcase-grid .showcase-card.visible:nth-child(1) { transition-delay: 0.1s; }
+.showcase-grid .showcase-card.visible:nth-child(2) { transition-delay: 0.22s; }
+.showcase-grid .showcase-card.visible:nth-child(3) { transition-delay: 0.34s; }
+.showcase-grid .showcase-card.visible:nth-child(4) { transition-delay: 0.46s; }
+
+/* จุดเด่นผลิตภัณฑ์ */
+.values-container .value-item.visible:nth-child(1) { transition-delay: 0.1s; }
+.values-container .value-item.visible:nth-child(2) { transition-delay: 0.22s; }
+.values-container .value-item.visible:nth-child(3) { transition-delay: 0.34s; }
+.values-container .value-item.visible:nth-child(4) { transition-delay: 0.46s; }
+
+/* สินค้ามาใหม่ (New Arrivals) */
+.products-grid .product-item.visible:nth-child(1) { transition-delay: 0.1s; }
+.products-grid .product-item.visible:nth-child(2) { transition-delay: 0.22s; }
+.products-grid .product-item.visible:nth-child(3) { transition-delay: 0.34s; }
+.products-grid .product-item.visible:nth-child(4) { transition-delay: 0.46s; }
+
+
+
