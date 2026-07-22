@@ -1,0 +1,1206 @@
+/* ==========================================================================
+   AS COLOUR STYLE SHEET
+   ========================================================================== */
+
+/* Custom Fonts & Variables */
+:root {
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Premium Color Palette */
+    --color-bg: #f8f9fa;
+    --color-text-dark: #111111;
+    --color-text-muted: #666666;
+    --color-text-light: #ffffff;
+    
+    /* Accents */
+    --color-cta-blue: #97b9d3;       /* Pastel steel blue matching "Create Account" */
+    --color-cta-blue-hover: #7ea3c0; /* Darker tone for CTA hover */
+    --color-border: #e2e8f0;
+    
+    /* Bottom Promo Banner (Impressions Expo) */
+    --expo-grad-start: #d33c82;      /* Vibrant fuchsia/pink */
+    --expo-grad-end: #77124c;        /* Deep grape/purple */
+    
+    /* Animation Timings */
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s ease-in-out;
+}
+
+/* Base resets & box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-primary);
+    background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ==========================================================================
+   1. PROMO & ANNOUNCEMENT BAR
+   ========================================================================== */
+.promo-bar {
+    background-color: #000000;
+    color: var(--color-text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1010;
+    animation: slideDown 0.4s ease-out;
+}
+
+.promo-close {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+    transition: var(--transition-fast);
+}
+
+.promo-close:hover {
+    color: var(--color-text-light);
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition-fast);
+}
+
+.header-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand Logo */
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--color-text-dark);
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.logo span {
+    color: var(--color-text-dark);
+}
+
+/* Navigation Menu */
+.nav-categories {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 40px;
+    margin-right: auto;
+}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    padding: 8px 0;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-text-dark);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover {
+    color: var(--color-text-dark);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Utilities Menu & Account CTA */
+.nav-utilities {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.util-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    transition: var(--transition-fast);
+}
+
+.util-link:hover {
+    opacity: 0.7;
+}
+
+/* Create Account Pill Button */
+.btn-create-account {
+    background-color: var(--color-cta-blue);
+    color: var(--color-text-light);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 10px 22px;
+    border-radius: 20px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(151, 185, 211, 0.2);
+}
+
+.btn-create-account:hover {
+    background-color: var(--color-cta-blue-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(151, 185, 211, 0.35);
+}
+
+.btn-create-account:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   3. HERO BANNER SECTION (Split 50/50)
+   ========================================================================== */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 72vh; /* Fills screen beautifully without taking it over completely */
+    overflow: hidden;
+}
+
+.hero-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 45px;
+    cursor: pointer;
+}
+
+/* Background image handling with smooth hover scale */
+.hero-card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 25%;
+    transition: transform 1.2s cubic-bezier(0.15, 0.85, 0.35, 1);
+    z-index: 1;
+}
+
+/* Left/Right specific positioning adjustments if needed */
+.hero-card.womens .card-bg {
+    background-position: center 30%;
+}
+
+.hero-card:hover .card-bg {
+    transform: scale(1.03);
+}
+
+/* Overlay for text readability */
+.hero-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 65%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.hero-card:hover .card-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+}
+
+/* Text Container */
+.hero-card .card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-card .category-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: -0.03em;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.hero-card:hover .category-title {
+    transform: translateY(-5px);
+}
+
+/* Divider line between grid items */
+.hero-card:first-child::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 4;
+}
+
+/* ==========================================================================
+   4. SHOWCASE GRID SECTION (4-Column Layout)
+   ========================================================================== */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: 28vh; /* Proportionate bottom row height */
+    overflow: hidden;
+}
+
+.showcase-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px;
+}
+
+/* General card backgrounds */
+.showcase-card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1.2s cubic-bezier(0.15, 0.85, 0.35, 1);
+    z-index: 1;
+}
+
+.showcase-card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+/* Product Titles */
+.product-content {
+    position: relative;
+    z-index: 3;
+}
+
+.product-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Card divider lines */
+.showcase-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 4;
+}
+
+/* 4a. SPECIAL EXPO CARD DESIGN (Column 1) */
+.expo-card {
+    background: linear-gradient(135deg, var(--expo-grad-start), var(--expo-grad-end));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Overlaying soft noise / canvas pattern */
+.expo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.12;
+    background-image: radial-gradient(circle, #fff 10%, transparent 11%), radial-gradient(circle, #fff 10%, transparent 11%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+    z-index: 1;
+}
+
+.expo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.2) 90%);
+    z-index: 2;
+}
+
+.expo-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.expo-sub {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.05em;
+    font-style: italic;
+    line-height: 1;
+}
+
+.expo-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--color-text-light);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-top: 5px;
+    margin-bottom: auto;
+    position: relative;
+    display: inline-block;
+}
+
+/* Strike-through line under "expo" matching original logo styling */
+.expo-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background-color: var(--color-text-light);
+}
+
+.expo-badge {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: var(--color-text-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    padding: 5px 12px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 25px;
+    transition: var(--transition-fast);
+}
+
+.expo-card:hover .expo-badge {
+    background-color: var(--color-text-light);
+    color: var(--expo-grad-end);
+    border-color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   5. SUPPORT FLOATING WIDGET
+   ========================================================================== */
+.support-widget {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: var(--color-text-light);
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: var(--transition-smooth);
+}
+
+.support-widget:hover {
+    transform: scale(1.08) rotate(5deg);
+    background-color: #222222;
+}
+
+.support-widget:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* 6a. Tablet Landscape and Smaller Laptops */
+@media (max-width: 1200px) {
+    .nav-categories {
+        gap: 15px;
+        margin-left: 20px;
+    }
+    
+    .nav-utilities {
+        gap: 15px;
+    }
+}
+
+/* 6b. Table Portrait / Small Screen */
+@media (max-width: 992px) {
+    /* Hide some navigation links on tablet to preserve space */
+    .nav-categories .nav-link:nth-child(4),
+    .nav-categories .nav-link:nth-child(5),
+    .nav-categories .nav-link:nth-child(7),
+    .nav-categories .nav-link:nth-child(8) {
+        display: none;
+    }
+
+    .hero-grid {
+        height: 60vh;
+    }
+    
+    .showcase-grid {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+    
+    .showcase-card {
+        height: 250px;
+    }
+}
+
+/* 6c. Mobile Screens */
+@media (max-width: 768px) {
+    /* Compress announcement bar */
+    .promo-bar {
+        padding: 8px 30px 8px 15px;
+        font-size: 10px;
+    }
+    
+    /* Adapt Header for Mobile */
+    .header-container {
+        padding: 15px 20px;
+    }
+    
+    .nav-categories {
+        display: none; /* Hide primary nav menu; could be replaced by hamburger drawer */
+    }
+    
+    .nav-utilities .util-link {
+        display: none; /* Hide search/cart text */
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    /* Stack Hero split grid */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        height: 100vh; /* Allow more space when stacked */
+    }
+    
+    .hero-card {
+        padding: 30px;
+    }
+    
+    .hero-card .category-title {
+        font-size: 38px;
+    }
+    
+    /* Stack Bottom Grid */
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .showcase-card {
+        height: 220px;
+        padding: 24px;
+    }
+    
+    .expo-title {
+        font-size: 32px;
+    }
+    
+    .support-widget {
+        bottom: 20px;
+        left: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   7. BRAND VALUES SECTION
+   ========================================================================== */
+.brand-values {
+    background-color: var(--color-text-light);
+    padding: 80px 40px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.values-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.value-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-text-dark);
+}
+
+.value-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-dark);
+}
+
+.value-item p {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 280px;
+}
+
+/* ==========================================================================
+   8. FEATURED PRODUCTS (NEW ARRIVALS)
+   ========================================================================== */
+.featured-products {
+    background-color: var(--color-bg);
+    padding: 100px 40px;
+}
+
+.section-header {
+    max-width: 1400px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-dark);
+}
+
+.view-all-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    border-bottom: 1.5px solid var(--color-text-dark);
+    padding-bottom: 2px;
+    transition: var(--transition-fast);
+}
+
+.view-all-link:hover {
+    opacity: 0.6;
+}
+
+.products-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-item:hover .product-img {
+    transform: scale(1.04);
+}
+
+.product-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #000000;
+    color: var(--color-text-light);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.product-tag.hot {
+    background-color: #c93b3b;
+}
+
+/* Quick Add Overlay on hover */
+.quick-add-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    transform: translateY(101%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image-container:hover .quick-add-overlay {
+    transform: translateY(0);
+}
+
+.btn-quick-add {
+    background-color: var(--color-text-light);
+    color: var(--color-text-dark);
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: var(--transition-fast);
+}
+
+.btn-quick-add:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+}
+
+/* Product Information Info area */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-cat {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+}
+
+.stars {
+    color: #f5a623;
+}
+
+.reviews-count {
+    color: var(--color-text-muted);
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.item-name a:hover {
+    opacity: 0.7;
+}
+
+.product-price {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+/* Swatches styling */
+.color-swatches {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.swatch {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.swatch:hover {
+    transform: scale(1.15);
+}
+
+.swatch.active::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 1px solid var(--color-text-dark);
+    border-radius: 50%;
+}
+
+/* Color definitions */
+.swatch.white { background-color: #ffffff; }
+.swatch.black { background-color: #1a1a1a; }
+.swatch.grey { background-color: #b5b5b5; }
+.swatch.navy { background-color: #1f2e4d; }
+.swatch.sand { background-color: #dac7b3; }
+.swatch.charcoal { background-color: #3b3b3b; }
+.swatch.sage { background-color: #8da392; }
+.swatch.mustard { background-color: #dba33f; }
+.swatch.forest { background-color: #2b3d32; }
+
+/* ==========================================================================
+   9. EDITORIAL JOURNAL BANNER
+   ========================================================================== */
+.journal-banner {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    overflow: hidden;
+}
+
+.journal-banner .banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.journal-banner:hover .banner-bg {
+    transform: scale(1.02);
+}
+
+.journal-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 3;
+    color: var(--color-text-light);
+    max-width: 600px;
+}
+
+.banner-sub {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    display: block;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.banner-title {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.banner-desc {
+    font-size: 15.5px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-read-journal {
+    display: inline-block;
+    background-color: var(--color-text-light);
+    color: var(--color-text-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 15px 32px;
+    transition: var(--transition-smooth);
+}
+
+.btn-read-journal:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   10. SITE FOOTER SECTION
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-text-light);
+    border-top: 1px solid var(--color-border);
+    padding: 90px 40px 0 40px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.footer-desc {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Newsletter Signup styles */
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    border-bottom: 1.5px solid var(--color-text-dark);
+    padding-bottom: 6px;
+    margin-top: 8px;
+    max-width: 320px;
+}
+
+.input-newsletter {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 13.5px;
+    flex: 1;
+    color: var(--color-text-dark);
+    padding: 5px 0;
+}
+
+.input-newsletter::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.8;
+}
+
+.btn-subscribe {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    transition: transform 0.2s ease;
+}
+
+.btn-subscribe:hover {
+    transform: translateX(4px);
+}
+
+/* Footer Link Columns styles */
+.footer-col-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-dark);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-text-dark);
+    padding-left: 2px;
+}
+
+/* Footer Bottom Strip Area */
+.footer-bottom {
+    border-top: 1px solid var(--color-border);
+    margin-top: 80px;
+    padding: 30px 0;
+}
+
+.footer-bottom-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 12.5px;
+    color: var(--color-text-muted);
+}
+
+/* Social links icons */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    transition: var(--transition-fast);
+}
+
+.social-links a:hover {
+    color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   11. ADDITIONAL RESPONSIVE BREAKPOINTS (EXPANSION)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .footer-container {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .values-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-values {
+        padding: 60px 20px;
+    }
+    
+    .values-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .featured-products {
+        padding: 60px 20px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .journal-banner {
+        height: auto;
+        padding: 60px 20px;
+    }
+    
+    .banner-title {
+        font-size: 30px;
+    }
+    
+    .banner-desc {
+        font-size: 14.5px;
+        margin-bottom: 25px;
+    }
+    
+    .site-footer {
+        padding: 60px 20px 0 20px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-bottom {
+        margin-top: 60px;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+

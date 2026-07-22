@@ -1,0 +1,494 @@
+/* ==========================================================================
+   CSS SYSTEM DESIGN (สไตล์หลักของเว็บแอปพลิเคชัน)
+   ========================================================================== */
+
+:root {
+  --font-primary: 'Outfit', 'Sarabun', sans-serif;
+  
+  /* ระบบชุดสีหลัก */
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --primary-glow: rgba(139, 92, 246, 0.2);
+  
+  /* สีดาร์กโหมดพรีเมียม */
+  --bg-app: #080c14;
+  --bg-card: #111827;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.06);
+  
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+/* เคลียร์ระยะขอบตั้งต้น */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+/* คลาสจัดโครงสร้างความกว้างหน้าเว็บ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   BREAKPOINT INDICATOR (ตัวอย่างการตรวจจับและแจ้งขนาดหน้าจอ)
+   ========================================================================== */
+.breakpoint-indicator {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.indicator-label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ป้ายสถานะของแต่ละอุปกรณ์เริ่มต้นจะซ่อนไว้ก่อน */
+.badge {
+  display: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-mobile {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.badge-tablet {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-desktop {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* ==========================================================================
+   HEADER & TYPOGRAPHY
+   ========================================================================== */
+.app-header {
+  padding: 60px 0 45px 0;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, rgba(8, 12, 20, 0) 100%);
+}
+
+/* 🎯 เทคนิคการใช้ clamp() ทำป้ายหัวข้อให้เปลี่ยนขนาดตาม viewport อัตโนมัติ */
+.app-header h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: clamp(0.95rem, 1vw + 0.8rem, 1.25rem);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECTIONS LAYOUT
+   ========================================================================== */
+.card-section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: clamp(20px, 3vw, 40px); /* ระยะขอบการ์ดจะยืดหยุ่นตามความกว้างจอ */
+  margin-bottom: 40px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.section-title-wrapper {
+  margin-bottom: 30px;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  background-color: rgba(139, 92, 246, 0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.section-title-wrapper h2 {
+  font-size: clamp(1.4rem, 2vw + 1rem, 1.85rem);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.section-title-wrapper p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   SECTION 1: THE HIERARCHICAL GUIDE CARDS (การ์ดคู่มือการเรียนรู้)
+   ========================================================================== */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.guide-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.guide-card-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.guide-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #c084fc;
+}
+
+.guide-card-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.guide-list {
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.guide-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.guide-list li strong {
+  color: #fff;
+}
+
+.mini-code-box {
+  background-color: #05070c;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
+}
+
+.mini-code-box pre {
+  font-size: 11.5px;
+  color: #34d399;
+  overflow-x: auto;
+}
+
+/* การ์ดความกว้างเต็มแถวสำหรับสรุปหัวข้อสำคัญด้านล่าง */
+.full-width-card {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.tips-subgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.tip-box {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.tip-box h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #a78bfa;
+}
+
+.tip-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   DEMO 1: CSS GRID STRUCTURE (การจัด GRID และการตกแต่งการ์ด)
+   ========================================================================== */
+.responsive-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+.responsive-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.responsive-card-img {
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+}
+
+.design-img {
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+}
+.dev-img {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+.responsive-img {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+.performance-img {
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+}
+
+.responsive-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.badge-tag {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  background-color: rgba(139, 92, 246, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.responsive-card-body h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.responsive-card-body p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   DEMO 2: CSS FLEXBOX STRUCTURE (การจัดกล่องแบบยืดหยุ่น)
+   ========================================================================== */
+
+/* 🎯 โหมด Flexbox: พื้นฐานจัดเรียงแนวตั้งบนมือถือก่อน */
+.flex-container-demo {
+  display: flex;
+  flex-direction: column; /* เรียงจากบนลงล่าง */
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.flex-item-demo {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1; /* กำหนดให้ขยายขนาดเฉลี่ยพื้นที่เท่ากัน */
+}
+
+.flex-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.flex-item-demo h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #c084fc;
+}
+
+.flex-item-demo p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   THEORY AND EXPLANATION CARDS (สไตล์สรุปและกล่องโค้ด)
+   ========================================================================== */
+.responsive-info-card {
+  padding: 25px;
+  background-color: rgba(139, 92, 246, 0.03);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+}
+
+.responsive-info-card h3 {
+  font-size: 1.2rem;
+  color: #c084fc;
+  margin-bottom: 15px;
+}
+
+.responsive-info-card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.responsive-code-box {
+  background-color: #05070c;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 15px 0;
+}
+
+.responsive-code-box pre {
+  font-size: 12.5px;
+  color: #34d399; /* รหัสสีเขียวสำหรับโค้ดบ็อกซ์ */
+  overflow-x: auto;
+}
+
+.app-footer-bottom {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  margin-top: 60px;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT & MEDIA QUERIES (กำหนด Breakpoints)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. [Mobile Standard / Default] จอมือถือขนาดเล็ก (< 600px)
+   -------------------------------------------------------------------------- */
+
+/* CSS Grid มีลักษณะไหล 1 คอลัมน์ตั้งตรง */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* จัดแสดงเฉพาะป้าย Mobile Badge */
+.badge-mobile { display: inline-block; }
+.badge-tablet { display: none; }
+.badge-desktop { display: none; }
+
+
+/* --------------------------------------------------------------------------
+   2. [Tablet Breakpoint] หน้าจอขนาดกลาง (กว้างตั้งแต่ 600px ขึ้นไป)
+   -------------------------------------------------------------------------- */
+@media (min-width: 600px) {
+  
+  /* ปรับ Grid เป็น 2 คอลัมน์คู่ซ้ายขวา */
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ปรับทิศทาง Flexbox เป็นแนวนอนและอนุญาตให้ตัดแถวใหม่ */
+  .flex-container-demo {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* ปรับการ์ดสรุปหัวข้อให้ขยายเป็น 2 คอลัมน์ */
+  .tips-subgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* อัปเดตการแสดงผลป้ายแจ้งขนาดหน้าจอ */
+  .badge-mobile { display: none; }
+  .badge-tablet { display: inline-block; }
+  .badge-desktop { display: none; }
+}
+
+
+/* --------------------------------------------------------------------------
+   3. [Desktop Breakpoint] หน้าจอขนาดใหญ่ (กว้างตั้งแต่ 1024px ขึ้นไป)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  
+  /* ปรับ Grid ให้รองรับ 4 คอลัมน์เรียงแถวหน้ากระดาน */
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* ในหน้าจอใหญ่ การ์ด Flexbox จะเรียงต่อกันเป็น 3 คอลัมน์พอดี */
+  .flex-container-demo {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  /* ปรับการ์ดสรุปหัวข้อให้ขยายเป็น 3 คอลัมน์ตามหน้าจอใหญ่ */
+  .tips-subgrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* อัปเดตการแสดงผลป้ายแจ้งขนาดหน้าจอ */
+  .badge-mobile { display: none; }
+  .badge-tablet { display: none; }
+  .badge-desktop { display: inline-block; }
+}

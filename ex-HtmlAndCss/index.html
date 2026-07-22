@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIKE AIR NEXUS | Pure CSS Parallax & Scroll Showcase</title>
+  <!-- Google Fonts: Montserrat (for headers/sporty feel) & Inter (for clean body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CSS PRELOADER OVERLAY (ERA-Style) -->
+  <div class="css-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <svg class="swoosh-logo-preloader" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 6.5c-1.2.6-3 1.2-5 1.5-2.2.3-4.5.3-6.5-.2-2-.5-3.5-1.5-4.5-2.8-.5-.7-.8-1.5-.9-2.2-.1-.5 0-.8.3-1 .4-.3.9-.2 1.4.1.7.4 1.5 1 2.5 1.4 1.5.7 3.5 1.1 5.8 1.1 3 .1 5.5-.7 7.5-1.8.8-.4 1.5-.9 2-1.3.4-.3.7-.3.9-.1.2.2.1.6-.1.9-.8 1.3-2.1 2.7-3.9 3.9l1 1.5z" />
+        </svg>
+        <h2>AIR NEXUS</h2>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+    <div class="preloader-door door-left"></div>
+    <div class="preloader-door door-right"></div>
+  </div>
+
+  <!-- PURE CSS STATE CONTROLLERS (At the very top of layout) -->
+  <input type="radio" name="shoe-theme" id="theme-red" checked class="state-radio">
+  <input type="radio" name="shoe-theme" id="theme-neon" class="state-radio">
+  <input type="radio" name="shoe-theme" id="theme-blue" class="state-radio">
+  <input type="checkbox" id="cart-state" class="state-checkbox">
+
+  <!-- FIXED SIDE SCROLL PROGRESS TRACKER (ERA-Style) -->
+  <div class="scroll-tracker-container">
+    <div class="scroll-number num-01">01</div>
+    <div class="scroll-bar-track">
+      <div class="scroll-bar-fill"></div>
+    </div>
+    <div class="scroll-number num-02">02</div>
+    <div class="scroll-number num-03">03</div>
+  </div>
+
+  <!-- FIXED BORDER OUTLINES (Architectural Frame Lines) -->
+  <div class="frame-line frame-left"></div>
+  <div class="frame-line frame-right"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="main-header">
+    <a href="#" class="logo" aria-label="Nike Home">
+      <svg class="swoosh-logo" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 6.5c-1.2.6-3 1.2-5 1.5-2.2.3-4.5.3-6.5-.2-2-.5-3.5-1.5-4.5-2.8-.5-.7-.8-1.5-.9-2.2-.1-.5 0-.8.3-1 .4-.3.9-.2 1.4.1.7.4 1.5 1 2.5 1.4 1.5.7 3.5 1.1 5.8 1.1 3 .1 5.5-.7 7.5-1.8.8-.4 1.5-.9 2-1.3.4-.3.7-.3.9-.1.2.2.1.6-.1.9-.8 1.3-2.1 2.7-3.9 3.9l1 1.5z" />
+      </svg>
+    </a>
+    
+    <nav class="nav-links">
+      <a href="#" class="nav-item active">New Releases</a>
+      <a href="#" class="nav-item">Men</a>
+      <a href="#" class="nav-item">Women</a>
+      <a href="#" class="nav-item">Kids</a>
+      <a href="#" class="nav-item">Customize</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+      <label for="cart-state" class="icon-btn cart-btn" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <span class="cart-badge"><span class="badge-count">0</span></span>
+      </label>
+      <button class="btn-primary join-us-btn">Join Us</button>
+    </div>
+  </header>
+
+  <!-- HERO SHOWCASE SECTION -->
+  <section class="hero-showcase" id="hero">
+    <div class="hero-sticky-wrapper">
+      <!-- Giant Parallax Background Text -->
+      <div class="bg-parallax-text" id="bgText">NEXUS</div>
+      
+      <!-- Background Glow Aura -->
+      <div class="bg-glow-aura" id="bgGlow"></div>
+
+      <div class="showcase-container">
+        
+        <!-- Left side: Product details & Customizer -->
+        <div class="product-info-panel">
+          <div class="tagline">// NIKE FUTURE LABS</div>
+          <h1 class="product-title">
+            <span class="mask-wrap"><span class="mask-content">AIR NEXUS <span class="edition-num">1</span></span></span>
+          </h1>
+          
+          <p class="description">
+            สัมผัสประสบการณ์แห่งความเบาและการสปริงตัวที่ดีที่สุดในทศวรรษนี้ ด้วยนวัตกรรม Air Cushioning 360 และโครงข่ายผ้าทอพิเศษ Engineered Mesh ปลดล็อกทุกขีดจำกัดของคุณ
+          </p>
+
+          <!-- Color Picker -->
+          <div class="color-picker-section">
+            <span class="section-title">CHOOSE COLORWAY:</span>
+            <div class="color-options">
+              <label for="theme-red" class="color-dot dot-red" title="Crimson Red"></label>
+              <label for="theme-neon" class="color-dot dot-neon" title="Volt Neon"></label>
+              <label for="theme-blue" class="color-dot dot-blue" title="Cyber Blue"></label>
+            </div>
+          </div>
+
+          <!-- Size Selector -->
+          <div class="size-picker-section">
+            <span class="section-title">SELECT SIZE (US):</span>
+            <div class="size-options">
+              <input type="radio" name="size-select" id="size-7" class="size-radio">
+              <label for="size-7" class="size-btn">7</label>
+
+              <input type="radio" name="size-select" id="size-8" class="size-radio">
+              <label for="size-8" class="size-btn">8</label>
+
+              <input type="radio" name="size-select" id="size-9" checked class="size-radio">
+              <label for="size-9" class="size-btn">9</label>
+
+              <input type="radio" name="size-select" id="size-10" class="size-radio">
+              <label for="size-10" class="size-btn">10</label>
+
+              <input type="radio" name="size-select" id="size-11" class="size-radio">
+              <label for="size-11" class="size-btn">11</label>
+            </div>
+          </div>
+
+          <!-- Buying Actions -->
+          <div class="action-bar">
+            <div class="price-container">
+              <span class="currency">฿</span>
+              <span class="price-val">6,500</span>
+            </div>
+            <label for="cart-state" class="btn-buy" id="addToCartBtn">
+              <span class="btn-text add-text">ADD TO BAG</span>
+              <span class="btn-text added-text">ADDED TO BAG!</span>
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </label>
+          </div>
+        </div>
+
+        <!-- Right side: Shoe Visual with 3D Hover Tilt and Callouts -->
+        <div class="product-visual-panel">
+          <div class="shoe-tilt-container" id="shoeTilt">
+            
+            <!-- Shoe Shadow -->
+            <div class="shoe-shadow"></div>
+
+            <!-- Shoe Images (Controlled by CSS sibling checks) -->
+            <div class="shoe-images-wrapper">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" alt="Air Nexus Red" class="shoe-img img-red">
+              <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80" alt="Air Nexus Neon" class="shoe-img img-neon">
+              <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=800&q=80" alt="Air Nexus Blue" class="shoe-img img-blue">
+            </div>
+
+            <!-- HOTSPOT 1: Upper Mesh -->
+            <div class="hotspot hotspot-top" style="top: 25%; right: 25%;">
+              <div class="hotspot-dot">
+                <div class="hotspot-pulse"></div>
+              </div>
+              <div class="hotspot-card">
+                <span class="hotspot-tag">BREATHABILITY</span>
+                <h3>Engineered Upper</h3>
+                <p>ผ้าตาข่ายระบายอากาศได้ดีเยี่ยม น้ำหนักเบา กระชับเข้ากับสรีระเท้าอย่างเป็นธรรมชาติ</p>
+              </div>
+            </div>
+
+            <!-- HOTSPOT 2: Sole Tech -->
+            <div class="hotspot hotspot-bottom" style="bottom: 22%; left: 20%;">
+              <div class="hotspot-dot">
+                <div class="hotspot-pulse"></div>
+              </div>
+              <div class="hotspot-card">
+                <span class="hotspot-tag">CUSHIONING</span>
+                <h3>Air Max Cushion</h3>
+                <p>ช่วยซับแรงกระแทกจากการเคลื่อนไหว พร้อมแรงสะท้อนกลับแบบเต็มเม็ดพลังงาน</p>
+              </div>
+            </div>
+
+          </div> <!-- /shoe-tilt-container -->
+        </div> <!-- /product-visual-panel -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLLING SPEC SECTION (PARALLAX GRID WITH BLANK VISUAL COLUMN) -->
+  <section class="specs-section" id="specs">
+    <div class="specs-sticky-wrapper">
+      <div class="specs-bg-text">PERFORMANCE</div>
+
+      <!-- MARQUEE BACKGROUND TRACK -->
+      <div class="specs-marquee-wrapper">
+        <div class="marquee-track">
+          <span>NIKE AIR NEXUS • LIGHTWEIGHT ENERGY • RUN THE STREETS • PUSH LIMITS • NIKE AIR NEXUS • LIGHTWEIGHT ENERGY • RUN THE STREETS • PUSH LIMITS • </span>
+        </div>
+      </div>
+      
+      <div class="specs-container">
+        
+        <!-- Left side: Blank space reserved for the flying shoe parallax landing -->
+        <div class="specs-visual-space"></div>
+
+        <!-- Right side: Content details & cards -->
+        <div class="specs-content-panel">
+          <div class="section-header">
+            <span class="sub-title">// ENGINE BENCHMARKS</span>
+            <h2 class="title-h2">
+              <span class="mask-wrap"><span class="mask-content-scroll">BREAK LIMITS. FLY HIGHER.</span></span>
+            </h2>
+          </div>
+
+          <div class="specs-grid">
+            <div class="spec-card card-reveal-1">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3>Ultra Lightweight</h3>
+              <p>โครงสร้างวัสดุแบบเบาพิเศษ ทำให้คุณเคลื่อนไหวได้อย่างอิสระเหมือนเดินอยู่บนอากาศ</p>
+            </div>
+
+            <div class="spec-card card-reveal-2">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17" />
+                </svg>
+              </div>
+              <h3>High Rebound</h3>
+              <p>ตอบสนองต่อแรงกระแทกได้มากกว่า 92% เร่งประสิทธิภาพการก้าวและสปริงตัวได้อย่างมีประสิทธิภาพ</p>
+            </div>
+
+            <div class="spec-card card-reveal-3">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3>Stabilized Fit</h3>
+              <p>ระบบรัดส้นที่ออกแบบตามสรีรศาสตร์ ล็อคข้อเท้าและสร้างความมั่นคงในทุกจังหวะเปลี่ยนทิศทาง</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX ATMOSPHERIC BANNER -->
+  <section class="banner-section">
+    <div class="banner-bg"></div>
+    <div class="banner-content">
+      <h2 class="banner-title">JUST DO IT.</h2>
+      <p class="banner-desc">ก้าวไปสู่อนาคตที่ดีกว่าด้วยวิศวกรรมการกีฬาชั้นสูงของ Nike</p>
+      <button class="btn-glow-outline">EXPLORE ALL GEARS</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PRODUCTS</h4>
+        <ul>
+          <li><a href="#">Running Shoes</a></li>
+          <li><a href="#">Basketball Shoes</a></li>
+          <li><a href="#">Streetwear Sneaker</a></li>
+          <li><a href="#">Custom Edition</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>GET HELP</h4>
+        <ul>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Shipping & Delivery</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ABOUT NIKE</h4>
+        <ul>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Sustainability</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Nike, Inc. All Rights Reserved. Designed with modern CSS scroll effects.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

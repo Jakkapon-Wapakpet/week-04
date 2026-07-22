@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Colour | Quality Blank Apparel</title>
+    <!-- Google Font: Inter for a clean, premium sans-serif aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Promo/Announcement Bar -->
+    <div class="promo-bar" id="promoBar">
+        <div class="promo-content">Free shipping on all orders over $150</div>
+        <button class="promo-close" onclick="document.getElementById('promoBar').style.display='none'" aria-label="Close Announcement">&times;</button>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <a href="#" class="logo">ascolour<span>.</span></a>
+            
+            <!-- Category Navigation -->
+            <nav class="nav-categories" aria-label="Primary Navigation">
+                <a href="#" class="nav-link">Men</a>
+                <a href="#" class="nav-link">Women</a>
+                <a href="#" class="nav-link">Headwear</a>
+                <a href="#" class="nav-link">Accessories</a>
+                <a href="#" class="nav-link">Kids</a>
+                <a href="#" class="nav-link">Sale</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Journal</a>
+            </nav>
+
+            <!-- Utility Navigation & CTA -->
+            <div class="nav-utilities">
+                <a href="#" class="util-link">Search</a>
+                <a href="#" class="util-link">Cart</a>
+                <a href="#" class="util-link">Sign In</a>
+                <a href="#" class="btn-create-account">Create Account</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Hero Section: Split 2-Column Banner -->
+        <section class="hero-grid" aria-label="Featured Categories">
+            <!-- Mens Banner -->
+            <a href="#" class="hero-card mens" aria-label="Shop Mens Collection">
+                <div class="card-bg" style="background-image: url('images/hero_mens.png');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h2 class="category-title">Mens</h2>
+                </div>
+            </a>
+            
+            <!-- Womens Banner -->
+            <a href="#" class="hero-card womens" aria-label="Shop Womens Collection">
+                <div class="card-bg" style="background-image: url('images/hero_womens.png');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h2 class="category-title">Womens</h2>
+                </div>
+            </a>
+        </section>
+
+        <!-- Showcase Section: 4-Column Category Grid -->
+        <section class="showcase-grid" aria-label="Product Highlights">
+            <!-- Promo Card: Impressions Expo -->
+            <a href="#" class="showcase-card expo-card" aria-label="Impressions Expo details">
+                <div class="expo-bg"></div>
+                <div class="expo-overlay"></div>
+                <div class="expo-content">
+                    <span class="expo-sub">impressions</span>
+                    <h3 class="expo-title">expo</h3>
+                    <div class="expo-badge">SUPPORT</div>
+                </div>
+            </a>
+
+            <!-- Category Card: T-Shirts -->
+            <a href="#" class="showcase-card product-card" aria-label="Shop T-Shirts">
+                <div class="card-bg" style="background-image: url('images/showcase_tshirt.png');"></div>
+                <div class="product-content">
+                    <h3 class="product-title">T-Shirts</h3>
+                </div>
+            </a>
+
+            <!-- Category Card: Headwear -->
+            <a href="#" class="showcase-card product-card" aria-label="Shop Headwear">
+                <div class="card-bg" style="background-image: url('images/showcase_headwear.png');"></div>
+                <div class="product-content">
+                    <h3 class="product-title">Headwear</h3>
+                </div>
+            </a>
+
+            <!-- Category Card: Jackets -->
+            <a href="#" class="showcase-card product-card" aria-label="Shop Jackets">
+                <div class="card-bg" style="background-image: url('images/showcase_jackets.png');"></div>
+                <div class="product-content">
+                    <h3 class="product-title">Jackets</h3>
+                </div>
+            </a>
+        </section>
+
+        <!-- Brand Values Section -->
+        <section class="brand-values" aria-label="Brand Values">
+            <div class="values-container">
+                <div class="value-item">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <h4>Premium Quality</h4>
+                    <p>100% combed cotton and high-grade combed yarn for supreme durability.</p>
+                </div>
+                <div class="value-item">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11.37zM4 11c0 1.66.134 3.29.393 4.88c.038.22.067.44.1.66m6.507-6.507a10.5 10.5 0 11-6.507 6.507m6.507-6.507v.01" />
+                    </svg>
+                    <h4>Ethically Sourced</h4>
+                    <p>We source responsibly and manufacture under certified ethical practices.</p>
+                </div>
+                <div class="value-item">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <h4>Print & Embroider Ready</h4>
+                    <p>Optimized combed fabric surfaces designed explicitly for custom branding.</p>
+                </div>
+                <div class="value-item">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2a2.5 2.5 0 002.5-2.5V10m-3.935-6.5A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 .559.038 1.11.111 1.648" />
+                    </svg>
+                    <h4>Global Hubs</h4>
+                    <p>Dispatched daily from our warehouses across AU, NZ, US, UK, and EU.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="featured-products" aria-label="New Arrivals Collection">
+            <div class="section-header">
+                <h2 class="section-title">New Arrivals</h2>
+                <a href="#" class="view-all-link">View All Products</a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1: Classic Tee -->
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="images/product_tee.png" alt="Classic Tee" class="product-img">
+                        <span class="product-tag">Organic</span>
+                        <div class="quick-add-overlay">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-meta">
+                            <span class="product-cat">T-Shirts</span>
+                            <div class="product-rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <span class="reviews-count">(42)</span>
+                            </div>
+                        </div>
+                        <h4 class="item-name"><a href="#">Classic Organic Tee</a></h4>
+                        <div class="product-price">$22.00</div>
+                        <div class="color-swatches">
+                            <span class="swatch white active" aria-label="White"></span>
+                            <span class="swatch black" aria-label="Black"></span>
+                            <span class="swatch grey" aria-label="Grey"></span>
+                            <span class="swatch navy" aria-label="Navy"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Heavy Hoodie -->
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="images/product_hoodie.png" alt="Heavy Hoodie" class="product-img">
+                        <span class="product-tag hot">Heavyweight</span>
+                        <div class="quick-add-overlay">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-meta">
+                            <span class="product-cat">Hoodies</span>
+                            <div class="product-rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                                <span class="reviews-count">(58)</span>
+                            </div>
+                        </div>
+                        <h4 class="item-name"><a href="#">Heavy Pullover Hood</a></h4>
+                        <div class="product-price">$48.00</div>
+                        <div class="color-swatches">
+                            <span class="swatch sand active" aria-label="Sand"></span>
+                            <span class="swatch black" aria-label="Black"></span>
+                            <span class="swatch charcoal" aria-label="Charcoal"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Premium Beanie -->
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="images/product_beanie.png" alt="Premium Beanie" class="product-img">
+                        <div class="quick-add-overlay">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-meta">
+                            <span class="product-cat">Headwear</span>
+                            <div class="product-rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <span class="reviews-count">(19)</span>
+                            </div>
+                        </div>
+                        <h4 class="item-name"><a href="#">Rib Knit Beanie</a></h4>
+                        <div class="product-price">$18.00</div>
+                        <div class="color-swatches">
+                            <span class="swatch grey active" aria-label="Grey"></span>
+                            <span class="swatch sage" aria-label="Sage"></span>
+                            <span class="swatch mustard" aria-label="Mustard"></span>
+                            <span class="swatch black" aria-label="Black"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Coach Jacket -->
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="images/product_jacket.png" alt="Coach Jacket" class="product-img">
+                        <span class="product-tag">New</span>
+                        <div class="quick-add-overlay">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-meta">
+                            <span class="product-cat">Jackets</span>
+                            <div class="product-rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                                <span class="reviews-count">(31)</span>
+                            </div>
+                        </div>
+                        <h4 class="item-name"><a href="#">Waterproof Coach Jacket</a></h4>
+                        <div class="product-price">$65.00</div>
+                        <div class="color-swatches">
+                            <span class="swatch black active" aria-label="Black"></span>
+                            <span class="swatch forest" aria-label="Forest Green"></span>
+                            <span class="swatch navy" aria-label="Navy"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal Editorial Section -->
+        <section class="journal-banner" aria-label="Brand Journal Banner">
+            <div class="banner-bg" style="background-image: url('images/journal_banner.png');"></div>
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <span class="banner-sub">Blank Canvas Expression</span>
+                <h2 class="banner-title">Made for print. Built for style.</h2>
+                <p class="banner-desc">Explore how printers, designers, and brands utilize AS Colour premium blanks to bring their custom apparel ideas to life.</p>
+                <a href="#" class="btn-read-journal">Read the Journal</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Info Column: Newsletter -->
+            <div class="footer-col newsletter-col">
+                <a href="#" class="logo footer-logo">ascolour<span>.</span></a>
+                <p class="footer-desc">High quality blank apparel designed for screen printing, embroidery, and retail fashion.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Your email address" class="input-newsletter" required>
+                    <button type="submit" class="btn-subscribe" aria-label="Subscribe to newsletter">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Footer Columns: Navigation -->
+            <div class="footer-col">
+                <h5 class="footer-col-title">Shop</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Men's Apparel</a></li>
+                    <li><a href="#">Women's Apparel</a></li>
+                    <li><a href="#">Headwear Catalog</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Kids Collection</a></li>
+                    <li><a href="#">New Releases</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5 class="footer-col-title">Support</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Sizing Charts</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5 class="footer-col-title">Company</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Ethical Production</a></li>
+                    <li><a href="#">B2B Wholesale Portal</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms & Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Strip -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="copyright">&copy; 2026 AS Colour. All rights reserved. Designed for blank expression.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Pinterest">PT</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Support Floating Widget -->
+    <button class="support-widget" aria-label="Open Chat Support">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2C6.477 2 2 6.13 2 11.22c0 2.68 1.25 5.1 3.28 6.8-.18.72-.67 2.1-1.48 2.87-.13.13-.15.34-.05.49.07.1.18.16.3.16.2 0 1.95-.2 3.82-1.3A10.74 10.74 0 0012 20.44c5.523 0 10-4.13 10-9.22S17.523 2 12 2zm0 16.5c-3.15 0-5.83-2.1-6.72-4.9a.75.75 0 111.44-.4c.67 2.11 2.86 3.8 5.28 3.8 2.42 0 4.61-1.69 5.28-3.8a.75.75 0 111.44.4c-.89 2.8-3.57 4.9-6.72 4.9z"/>
+        </svg>
+    </button>
+
+</body>
+</html>

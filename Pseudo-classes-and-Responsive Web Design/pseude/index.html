@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-classes Demo</title>
+  <!-- นำเข้าฟอนต์ Outfit จาก Google Fonts เพื่อความสวยงามพรีเมียม -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- เชื่อมต่อไฟล์ CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="container">
+      <h1>CSS Pseudo-classes Playground</h1>
+      <p class="subtitle">เรียนรู้และทำความเข้าใจการใช้งาน Pseudo-classes หรือสถานะพิเศษของ Elements ต่างๆ ใน CSS พร้อมคำอธิบายภาษาไทย</p>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- ==========================================
+         SECTION: CSS Pseudo-classes Playground
+         ========================================== -->
+    <section class="card-section">
+      <div class="section-title-wrapper">
+        <span class="section-badge">Interactive Demo</span>
+        <h2>การใช้งาน CSS Pseudo-classes ในสถานะรูปแบบต่างๆ</h2>
+        <p>ลองเอาเมาส์ชี้ โฟกัส หรือติ๊กเลือกรายการในแต่ละการ์ด เพื่อดูผลการเปลี่ยนแปลงสไตล์จริงแบบสดๆ</p>
+      </div>
+
+      <div class="demo-grid">
+        
+        <!-- ตัวอย่างที่ 1: Hover & Active -->
+        <div class="demo-card">
+          <h3>1. ปุ่มโต้ตอบ (:hover & :active)</h3>
+          <p class="card-desc">ลองเอาเมาส์ชี้ (Hover) และกดคลิกค้างไว้ (Active) บนปุ่มด้านล่าง</p>
+          <div class="interactive-area flex-center">
+            <button class="btn btn-primary">ชี้เมาส์และกดที่นี่!</button>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>.btn:hover { background: #4f46e5; }
+.btn:active { transform: scale(0.95); }</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 2: Focus & Focus-within -->
+        <div class="demo-card">
+          <h3>2. ช่องกรอกข้อมูล (:focus & :focus-within)</h3>
+          <p class="card-desc">ลองคลิกในช่อง input ด้านล่างเพื่อดูการโฟกัสและการเปลี่ยนสไตล์ของกล่องครอบ</p>
+          <div class="interactive-area">
+            <div class="input-group">
+              <label for="username">ชื่อผู้ใช้งาน:</label>
+              <input type="text" id="username" placeholder="พิมพ์ชื่อผู้ใช้ที่นี่...">
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>input:focus { border-color: #6366f1; }
+.input-group:focus-within { background: rgba(99,102,241,0.05); }</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 3: Structural (:nth-child) -->
+        <div class="demo-card">
+          <h3>3. เลือกตามลำดับลูก (:nth-child)</h3>
+          <p class="card-desc">จัดสไตล์รายการแถบสลับสี (Zebra striping) และใส่ขอบโค้งหัวท้ายอัตโนมัติ</p>
+          <div class="interactive-area">
+            <ul class="demo-list">
+              <li>รายการที่ 1 (ตัวแรกสุด :first-child)</li>
+              <li>รายการที่ 2 (แถวคู่ :nth-child(even))</li>
+              <li>รายการที่ 3 (แถวคี่ :nth-child(odd))</li>
+              <li>รายการที่ 4 (แถวคู่ :nth-child(even))</li>
+              <li>รายการที่ 5 (ตัวสุดท้าย :last-child)</li>
+            </ul>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>li:first-child { font-weight: bold; }
+li:nth-child(even) { background-color: #f8fafc; }
+li:last-child { border-bottom: none; }</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 4: State (:checked & :disabled) -->
+        <div class="demo-card">
+          <h3>4. ตัวเลือกสถานะพิเศษ (:checked & :disabled)</h3>
+          <p class="card-desc">การจัดสไตล์ตามสถานะการเลือก Checkbox หรือกล่องที่ห้ามกด</p>
+          <div class="interactive-area">
+            <div class="checkbox-demo">
+              <label class="custom-checkbox">
+                <input type="checkbox" checked>
+                <span class="checkbox-label">อันนี้ถูกเลือกอยู่ (:checked)</span>
+              </label>
+              <br>
+              <label class="custom-checkbox disabled-label">
+                <input type="checkbox" disabled>
+                <span class="checkbox-label">อันนี้กดไม่ได้ (:disabled)</span>
+              </label>
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>input:checked + span { color: #6366f1; font-weight: 600; }
+input:disabled { cursor: not-allowed; opacity: 0.5; }</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 5: Negation (:not) [NEW] -->
+        <div class="demo-card">
+          <h3>5. การปฏิเสธองค์ประกอบ (:not)</h3>
+          <p class="card-desc">จัดสไตล์ให้กับ Tag ทั้งหมด "ยกเว้น" Tag ที่กำหนดใน :not()</p>
+          <div class="interactive-area flex-center gap-10">
+            <span class="tag">Normal Tag</span>
+            <span class="tag tag-special">Special Tag (:not)</span>
+            <span class="tag">Normal Tag 2</span>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>/* ชี้แล้วเรืองแสงเฉพาะ tag ที่ไม่ใช่คลาส .tag-special */
+.tag:not(.tag-special):hover {
+  background-color: #6366f1;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 6: Form Validation (:valid & :invalid) [NEW] -->
+        <div class="demo-card">
+          <h3>6. ตรวจสอบข้อมูลฟอร์ม (:valid & :invalid)</h3>
+          <p class="card-desc">ลองพิมพ์อีเมลให้ถูกต้องเพื่อเปลี่ยนขอบเป็นสีเขียว หากไม่ถูกต้องจะเป็นสีแดง</p>
+          <div class="interactive-area">
+            <div class="validation-group">
+              <input type="email" required placeholder="ใส่เมล เช่น dev@email.com">
+              <span class="val-msg">รูปแบบเมลถูกต้องหรือไม่?</span>
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>input:focus:invalid { border-color: #ef4444; }
+input:focus:valid { border-color: #10b981; }</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 7: Placeholder Shown (:placeholder-shown) [NEW] -->
+        <div class="demo-card">
+          <h3>7. ตรวจจับข้อมูลว่าง (:placeholder-shown)</h3>
+          <p class="card-desc">ตรวจว่าผู้ใช้พิมพ์ตัวหนังสือลงไปในช่องหรือยัง ถ้ายังไม่มีจะแสดงคำเตือนข้างล่าง</p>
+          <div class="interactive-area">
+            <div class="placeholder-demo">
+              <input type="text" placeholder="กรุณาพิมพ์ข้อมูลบางอย่าง...">
+              <p class="warning-text">⚠️ คุณยังไม่ได้พิมพ์อะไรเลย!</p>
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>/* ซ่อนแจ้งเตือนถ้าช่องมีข้อมูลแล้ว (placeholder หายไป) */
+input:not(:placeholder-shown) + .warning-text {
+  display: none;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 8: Tab Switcher (:target) [NEW] -->
+        <div class="demo-card">
+          <h3>8. สลับหน้าแท็บดึงข้อมูล (:target)</h3>
+          <p class="card-desc">การใช้ URL hash (#) เพื่อสลับแสดงข้อมูลด้วย CSS ล้วนๆ โดยไม่ต้องใช้ JS</p>
+          <div class="interactive-area">
+            <div class="tabs-demo">
+              <div class="tab-links">
+                <a href="#tab1" class="tab-link">กล่องที่ 1</a>
+                <a href="#tab2" class="tab-link">กล่องที่ 2</a>
+              </div>
+              <div class="tab-contents">
+                <div id="tab1" class="tab-content">🎉 ยินดีด้วย! คุณเปิดเนื้อหาแท็บที่ 1 สำเร็จ</div>
+                <div id="tab2" class="tab-content">🚀 ยอดเยี่ยม! นี่คือเนื้อหาจากแท็บที่ 2</div>
+                <div id="tab-default" class="tab-content default-visible">📍 คลิกแท็บด้านบนเพื่อเลือกดูข้อมูล</div>
+              </div>
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>.tab-content:target {
+  display: block; /* แสดงกล่องเมื่อ hash ตรงกับ id */
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 9: Parent Selector (:has) [NEW] -->
+        <div class="demo-card has-parent-demo">
+          <h3>9. ตรวจจับองค์ประกอบลูก (:has)</h3>
+          <p class="card-desc">คลาสเสมือนที่เป็นปฏิวัติวงการ! จัดสไตล์กล่องตัวแม่เมื่อมีกล่องตัวลูกบางอย่างทำงาน</p>
+          <div class="interactive-area">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="toggle-bg-checkbox">
+              <span class="checkbox-label">ติ๊กเพื่อเปลี่ยนสีกล่องตัวแม่!</span>
+            </label>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>/* เปลี่ยนสีกรอบและเงาเมื่อ checkbox ด้านในถูกติ๊ก */
+.has-parent-demo:has(.toggle-bg-checkbox:checked) {
+  border-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.03);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 10: Keyboard Focus (:focus-visible) [NEW] -->
+        <div class="demo-card">
+          <h3>10. โฟกัสเฉพาะคีย์บอร์ด (:focus-visible)</h3>
+          <p class="card-desc">จัดสไตล์ขอบเฉพาะเมื่อกดปุ่ม Tab บนคีย์บอร์ดมาโฟกัส (UX จะไม่แสดงสไตล์ขอบเวลากดคลิกเมาส์)</p>
+          <div class="interactive-area flex-center gap-10">
+            <button class="btn btn-focus">Normal :focus</button>
+            <button class="btn btn-focus-visible">Tab Key :focus-visible</button>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>/* แสดงขอบเรืองแสงเฉพาะตอนกด Tab มาโฟกัส */
+.btn-focus-visible:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 11: Required / Optional Inputs (:required & :optional) [NEW] -->
+        <div class="demo-card">
+          <h3>11. บังคับกรอก / ทางเลือก (:required & :optional)</h3>
+          <p class="card-desc">จัดสไตล์ตัวแจ้งเตือนความสำคัญของช่องกรอกโดยอิงตาม Attribute จาก HTML อัตโนมัติ</p>
+          <div class="interactive-area" style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+            <div class="input-req-opt">
+              <input type="text" required placeholder="ช่องนี้บังคับกรอก...">
+              <span class="field-badge"></span>
+            </div>
+            <div class="input-req-opt">
+              <input type="text" placeholder="ช่องนี้เลือกกรอกได้...">
+              <span class="field-badge"></span>
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>input:required + .field-badge::after { content: " *"; color: red; }
+input:optional + .field-badge::after { content: " (ไม่บังคับ)"; }</code></pre>
+          </div>
+        </div>
+
+        <!-- ตัวอย่างที่ 12: Structural (:only-child) [NEW] -->
+        <div class="demo-card">
+          <h3>12. ลูกโทนคนเดียว (:only-child)</h3>
+          <p class="card-desc">สไตล์จะทำงานเมื่อ Element นั้นเป็นลูกคนเดียวในกล่อง (ไม่มีพี่น้องสิบลิ้งแท็กอื่นเลย)</p>
+          <div class="interactive-area flex-center gap-10">
+            <div class="parent-box">
+              <div class="child-item">ฉันคนเดียว 🙋‍♂️</div>
+            </div>
+            <div class="parent-box">
+              <div class="child-item">พี่คนโต</div>
+              <div class="child-item">น้องคนเล็ก</div>
+            </div>
+          </div>
+          <div class="code-explanation">
+            <p><strong>CSS:</strong></p>
+            <pre><code>.child-item:only-child {
+  background-color: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+}</code></pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer-bottom">
+    <p>สร้างสรรค์ขึ้นเพื่อประกอบการเรียนรู้ในวิชา CSS Pseudo-classes | 2026</p>
+  </footer>
+
+</body>
+</html>

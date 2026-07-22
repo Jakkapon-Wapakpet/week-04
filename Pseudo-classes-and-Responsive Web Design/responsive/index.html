@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Design Learning Center</title>
+  <!-- นำเข้าฟอนต์ Outfit จาก Google Fonts เพื่อความสวยงามพรีเมียม -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- เชื่อมต่อไฟล์ CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- แถบแสดงสถานะ Breakpoint ปัจจุบัน (จะเปลี่ยนสีและข้อความตามขนาดหน้าจอโดยใช้ Media Queries) -->
+  <div class="breakpoint-indicator">
+    <span class="indicator-label">อุปกรณ์ปัจจุบันของคุณ:</span>
+    <span class="badge badge-mobile">📱 มือถือ (Mobile < 600px)</span>
+    <span class="badge badge-tablet">📟 แท็บเล็ต (Tablet 600px - 1024px)</span>
+    <span class="badge badge-desktop">💻 เดสก์ท็อป (Desktop > 1024px)</span>
+  </div>
+
+  <header class="app-header">
+    <div class="container">
+      <h1>Responsive Web Design</h1>
+      <p class="subtitle">ศูนย์การเรียนรู้การเขียนหน้าเว็บเพื่อรองรับทุกอุปกรณ์ (มือถือ, แท็บเล็ต, เดสก์ท็อป) พร้อมคำอธิบายภาษาไทยในทุกจุด</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ==========================================
+         SECTION 1: Guide Content (คู่มือการเรียนรู้หลัก)
+         ========================================== -->
+    <section class="card-section">
+      <div class="section-title-wrapper">
+        <span class="section-badge">Theory & Concepts</span>
+        <h2>Responsive Web Design คืออะไร? และใช้งานอย่างไร?</h2>
+        <p>ทำความเข้าใจแนวคิดหลักและมาตรฐานในการออกแบบเว็บไซต์ที่ยืดหยุ่น</p>
+      </div>
+
+      <div class="guide-grid">
+        
+        <!-- กล่องที่ 1: มันคืออะไร -->
+        <div class="guide-card">
+          <div class="guide-card-icon">🧠</div>
+          <h3>1. Responsive Design คืออะไร?</h3>
+          <p class="guide-card-text">
+            คือแนวคิดในการออกแบบและพัฒนาเว็บไซต์ให้ **ปรับเปลี่ยนเลย์เอาต์ตามขนาดหน้าจออุปกรณ์โดยอัตโนมัติ** 
+            ใช้โค้ดชุดเดียว (Single Codebase) และ URL เดียวกัน ช่วยอำนวยความสะดวกให้ผู้ใช้งานไม่ต้องซูมเข้า-ออก หรือเข้าเว็บเวอร์ชันโมบายแยกต่างหาก
+          </p>
+        </div>
+
+        <!-- กล่องที่ 2: 3 เสาหลักของการทำงาน -->
+        <div class="guide-card">
+          <div class="guide-card-icon">🏗️</div>
+          <h3>2. 3 เสาหลักที่ทำให้เว็บยืดหยุ่น</h3>
+          <ul class="guide-list">
+            <li><strong>Fluid Layout:</strong> ใช้โครงสร้างยืดหยุ่น เช่น Flexbox หรือ CSS Grid ร่วมกับหน่วย <code>%</code>, <code>vw</code>, <code>vh</code></li>
+            <li><strong>Responsive Media:</strong> ตั้งค่ารูปภาพและวิดีโอไม่ให้ล้นจอด้วย <code>max-width: 100%; height: auto;</code></li>
+            <li><strong>Media Queries:</strong> คำสั่ง CSS ดักจับความกว้างหน้าจอเพื่อเปลี่ยนสไตล์</li>
+          </ul>
+        </div>
+
+        <!-- กล่องที่ 3: เริ่มต้นใช้งานยังไง -->
+        <div class="guide-card">
+          <div class="guide-card-icon">⚙️</div>
+          <h3>3. เริ่มต้นใช้งานอย่างไร?</h3>
+          <p class="guide-card-text">
+            <strong>ขั้นตอนที่ 1:</strong> ต้องใส่แท็ก Meta Viewport ใน <code>&lt;head&gt;</code> เสมอ:
+          </p>
+          <div class="mini-code-box">
+            <pre><code>&lt;meta name="viewport" 
+content="width=device-width, 
+initial-scale=1.0"&gt;</code></pre>
+          </div>
+          <p class="guide-card-text" style="margin-top: 10px;">
+            <strong>ขั้นตอนที่ 2:</strong> ใช้ Media Queries ใน CSS สำหรับแต่ละอุปกรณ์
+          </p>
+        </div>
+
+        <!-- กล่องที่ 4: Breakpoints ที่ต้องจำ -->
+        <div class="guide-card">
+          <div class="guide-card-icon">📐</div>
+          <h3>4. จุดเปลี่ยนหน้าจอ (Breakpoints) ที่ใช้บ่อย</h3>
+          <ul class="guide-list">
+            <li><strong>น้อยกว่า 576px:</strong> หน้าจอมือถือแนวตั้ง (เขียนโค้ดตั้งต้นจุดนี้)</li>
+            <li><strong>768px ขึ้นไป:</strong> แท็บเล็ตแนวตั้ง (สลับสไตล์เป็น 2 คอลัมน์)</li>
+            <li><strong>992px ขึ้นไป:</strong> แล็ปท็อป / แท็บเล็ตแนวนอน (ขยาย Navbar เต็ม)</li>
+            <li><strong>1200px ขึ้นไป:</strong> เดสก์ท็อปขนาดใหญ่ (จำกัดขนาดหน้าเว็บกึ่งกลาง)</li>
+          </ul>
+        </div>
+
+        <!-- กล่องที่ 5: เทคนิคที่ใช้บ่อยและควรจำ -->
+        <div class="guide-card full-width-card">
+          <div class="guide-card-icon">⚡</div>
+          <h3>5. เทคนิคและแนวคิดยอดนิยมที่ควรจำ</h3>
+          <div class="tips-subgrid">
+            <div class="tip-box">
+              <h5>🟢 Mobile-First Design</h5>
+              <p>เขียน CSS แบบธรรมดาของจอมือถือก่อน (เพราะสไตล์เรียบง่ายที่สุด) จากนั้นจึงใช้ <code>@media (min-width: ...)</code> ค่อยๆ ปรับเพิ่มสไตล์สำหรับหน้าจอใหญ่ขึ้น วิธีนี้ทำให้หน้าเว็บโหลดเร็วบนโทรศัพท์มือถือ</p>
+            </div>
+            <div class="tip-box">
+              <h5>🟢 ใช้ max-width แทน width</h5>
+              <p>ห้ามใช้ <code>width: 900px;</code> สไตล์ตายตัวบนองค์ประกอบหลัก ให้ใช้ <code>width: 100%; max-width: 900px;</code> หน้าเว็บจะหดตามหน้าจอมือถือ แต่จะไม่กว้างเกิน 900px เมื่ออยู่บนหน้าจอคอมพิวเตอร์ใหญ่</p>
+            </div>
+            <div class="tip-box">
+              <h5>🟢 การจัดการฟอนต์ด้วย clamp()</h5>
+              <p>ใช้คำสั่ง <code>font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);</code> ตัวอักษรจะย่อ-ขยายอัตโนมัติตามขนาดจอโดยไม่มีการกระตุก และไม่ต้องพึ่งพา Media Queries ช่วยประหยัดโค้ดได้เป็นจำนวนมาก</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: Interactive Grid Demo
+         ========================================== -->
+    <section class="card-section">
+      <div class="section-title-wrapper">
+        <span class="section-badge">Interactive Demo 1</span>
+        <h2>การจัดเลย์เอาต์ด้วย CSS Grid ร่วมกับ Media Queries</h2>
+        <p>ลองย่อหน้าต่างบราวเซอร์เพื่อสังเกตการปรับจำนวนคอลัมน์การ์ดจาก 1 คอลัมน์ (มือถือ) -> 2 คอลัมน์ (แท็บเล็ต) -> 4 คอลัมน์ (เดสก์ท็อป)</p>
+      </div>
+
+      <!-- ส่วนโครงสร้าง Grid -->
+      <div class="responsive-grid">
+        
+        <div class="responsive-card card-design">
+          <div class="responsive-card-img design-img"></div>
+          <div class="responsive-card-body">
+            <span class="badge-tag">Design</span>
+            <h4>UI/UX Layout</h4>
+            <p>การจัดองค์ประกอบภาพและตัวอักษรให้อยู่ในสัดส่วนที่เป็นระเบียบเรียบร้อยในทุกๆ ขนาดหน้าจอ</p>
+          </div>
+        </div>
+
+        <div class="responsive-card card-dev">
+          <div class="responsive-card-img dev-img"></div>
+          <div class="responsive-card-body">
+            <span class="badge-tag">Fluidity</span>
+            <h4>Responsive Grid</h4>
+            <p>การกำหนดอัตราส่วนการขยายด้วยหน่วย fr เพื่อให้แต่ละบล็อกดึงพื้นที่ว่างมาแสดงผลอย่างพอดี</p>
+          </div>
+        </div>
+
+        <div class="responsive-card card-responsive">
+          <div class="responsive-card-img responsive-img"></div>
+          <div class="responsive-card-body">
+            <span class="badge-tag">Technology</span>
+            <h4>Media Queries</h4>
+            <p>การใช้ CSS ดักจับคุณสมบัติเบราว์เซอร์เพื่อสลับเปลี่ยนสไตล์เลย์เอาต์ในจุด Breakpoints ต่างๆ</p>
+          </div>
+        </div>
+
+        <div class="responsive-card card-performance">
+          <div class="responsive-card-img performance-img"></div>
+          <div class="responsive-card-body">
+            <span class="badge-tag">Speed</span>
+            <h4>Optimization</h4>
+            <p>การจัดลำดับโค้ดให้อ่านง่าย มีโครงสร้างที่เป็นระเบียบเพื่อส่งผลดีต่อความเร็วการโหลดเว็บ</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: Interactive Flexbox Demo
+         ========================================== -->
+    <section class="card-section">
+      <div class="section-title-wrapper">
+        <span class="section-badge">Interactive Demo 2</span>
+        <h2>การจัดทิศทางการไหลด้วย CSS Flexbox</h2>
+        <p>Flexbox เหมาะสำหรับการจัดระเบียบเนื้อหาแบบแนวนอนหรือแนวตั้งเดี่ยว โดยเลย์เอาต์นี้จะสลับแนวและไหลตกบรรทัดใหม่เมื่อพื้นที่ไม่เพียงพอ</p>
+      </div>
+
+      <!-- ส่วนโครงสร้าง Flexbox -->
+      <div class="flex-container-demo">
+        <div class="flex-item-demo">
+          <div class="flex-icon">🚀</div>
+          <h4>flex-direction</h4>
+          <p>เปลี่ยนแนวการจัดวางจากแนวตั้ง (column) บนมือถือ เป็นแนวนอน (row) เมื่อหน้าจอกว้างขึ้น</p>
+        </div>
+        <div class="flex-item-demo">
+          <div class="flex-icon">📦</div>
+          <h4>flex-wrap: wrap</h4>
+          <p>อนุญาตให้อิลิเมนต์ตกไปบรรทัดใหม่ได้เมื่อขนาดหน้าจอแคบเกินไป ช่วยป้องกันการล้นขอบจอ</p>
+        </div>
+        <div class="flex-item-demo">
+          <div class="flex-icon">⚖️</div>
+          <h4>flex: 1</h4>
+          <p>สั่งให้กล่องต่างๆ มีสัดส่วนขยายพื้นที่ส่วนที่เหลือเท่าๆ กัน เพื่อแสดงผลได้อย่างกลมกลืน</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: Real Code Reference
+         ========================================== -->
+    <section class="card-section">
+      <div class="section-title-wrapper">
+        <span class="section-badge">Code Reference</span>
+        <h2>โค้ดเบื้องหลังระบบ Responsive หน้านี้</h2>
+        <p>ตัวอย่างการเขียนโค้ดที่ถูกต้องตามหลัก Mobile-First ที่ใช้จริงในการควบคุมหน้านี้</p>
+      </div>
+
+      <div class="responsive-info-card">
+        <h3>⚡ CSS สำหรับการ์ด Grid (Demo 1)</h3>
+        <div class="responsive-code-box">
+          <pre><code>/* [Mobile-First] ค่าเริ่มต้นสำหรับโทรศัพท์มือถือ */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 แถวต่อ 1 การ์ด */
+  gap: 20px;
+}
+
+/* สำหรับหน้าจอขนาดกว้างตั้งแต่ 600px ขึ้นไป (Tablet) */
+@media (min-width: 600px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr); /* ขยายเป็น 2 คอลัมน์ */
+  }
+}
+
+/* สำหรับหน้าจอขนาดกว้างตั้งแต่ 1024px ขึ้นไป (Desktop) */
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr); /* ขยายเป็น 4 คอลัมน์เต็มพื้นที่ */
+  }
+}</code></pre>
+        </div>
+
+        <h3 style="margin-top: 25px;">⚡ CSS สำหรับการไหล Flexbox (Demo 2)</h3>
+        <div class="responsive-code-box">
+          <pre><code>/* [Mobile-First] แสดงกล่องเรียงจากบนลงล่างบนจอมือถือ */
+.flex-container-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ปรับทิศทางเป็นแนวนอนและตกแถวใหม่บนหน้าจอที่กว้างขึ้น */
+@media (min-width: 600px) {
+  .flex-container-demo {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer-bottom">
+    <p>สร้างสรรค์ขึ้นเพื่อประกอบการเรียนรู้ในวิชา CSS Responsive Web Design | 2026</p>
+  </footer>
+
+</body>
+</html>
