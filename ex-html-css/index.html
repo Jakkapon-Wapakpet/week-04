@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AS Colour | Quality Blank Apparel</title>
-    <!-- Google Font: Inter for a clean, premium sans-serif aesthetic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,9 +41,36 @@
                 <a href="#" class="util-link">Cart</a>
                 <a href="#" class="util-link">Sign In</a>
                 <a href="#" class="btn-create-account">Create Account</a>
+                <!-- ปุ่มเมนู Hamburger สำหรับจอมือถือ [NEW] -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- กล่องเมนูดึงด้านข้างสำหรับจอมือถือ [NEW] -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close" id="drawerClose" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-drawer-nav">
+            <a href="#" class="mobile-drawer-link">Men</a>
+            <a href="#" class="mobile-drawer-link">Women</a>
+            <a href="#" class="mobile-drawer-link">Headwear</a>
+            <a href="#" class="mobile-drawer-link">Accessories</a>
+            <a href="#" class="mobile-drawer-link">Kids</a>
+            <a href="#" class="mobile-drawer-link">Sale</a>
+            <a href="#" class="mobile-drawer-link">About</a>
+            <a href="#" class="mobile-drawer-link">Journal</a>
+            <hr class="drawer-divider">
+            <a href="#" class="mobile-drawer-link util">Search</a>
+            <a href="#" class="mobile-drawer-link util">Cart</a>
+            <a href="#" class="mobile-drawer-link util">Sign In</a>
+            <a href="#" class="btn-drawer-cta">Create Account</a>
+        </nav>
+    </div>
+
 
     <!-- Main Content Area -->
     <main class="main-content">
@@ -378,6 +404,25 @@
                 // สั่งให้ระบบเริ่มเฝ้าติดตามชิ้นส่วนนั้นๆ
                 scrollObserver.observe(item);
             });
+
+            // ⚡ สคริปต์สำหรับการสลับเปิด-ปิดเมนูแฮมเบอร์เกอร์บนจอมือถือ
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const closeBtn = document.getElementById('drawerClose');
+            const drawer = document.getElementById('mobileDrawer');
+
+            if (toggleBtn && drawer) {
+                toggleBtn.addEventListener('click', () => {
+                    drawer.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // ล็อกไม่ให้เลื่อนหน้าจอหลัก
+                });
+            }
+
+            if (closeBtn && drawer) {
+                closeBtn.addEventListener('click', () => {
+                    drawer.classList.remove('active');
+                    document.body.style.overflow = ''; // ปลดล็อกหน้าจอหลัก
+                });
+            }
         });
     </script>
 

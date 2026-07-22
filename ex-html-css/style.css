@@ -5,35 +5,42 @@
 /* Custom Fonts & Variables */
 :root {
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    
+
     /* Premium Color Palette */
     --color-bg: #f8f9fa;
     --color-text-dark: #111111;
     --color-text-muted: #666666;
     --color-text-light: #ffffff;
-    
+
     /* Accents */
-    --color-cta-blue: #97b9d3;       /* Pastel steel blue matching "Create Account" */
-    --color-cta-blue-hover: #7ea3c0; /* Darker tone for CTA hover */
+    --color-cta-blue: #97b9d3;
+    /* Pastel steel blue matching "Create Account" */
+    --color-cta-blue-hover: #7ea3c0;
+    /* Darker tone for CTA hover */
     --color-border: #e2e8f0;
-    
+
     /* Bottom Promo Banner (Impressions Expo) */
-    --expo-grad-start: #d33c82;      /* Vibrant fuchsia/pink */
-    --expo-grad-end: #77124c;        /* Deep grape/purple */
-    
+    --expo-grad-start: #d33c82;
+    /* Vibrant fuchsia/pink */
+    --expo-grad-end: #77124c;
+    /* Deep grape/purple */
+
     /* Animation Timings */
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.2s ease-in-out;
 }
 
 /* Base resets & box-sizing */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
     font-family: var(--font-primary);
@@ -53,13 +60,16 @@ a {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #c1c1c1;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
 }
@@ -226,7 +236,8 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 72vh; /* Fills screen beautifully without taking it over completely */
+    height: 72vh;
+    /* Fills screen beautifully without taking it over completely */
     overflow: hidden;
 }
 
@@ -270,21 +281,17 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 65%,
-        rgba(0, 0, 0, 0.25) 100%
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 65%,
+            rgba(0, 0, 0, 0.25) 100%);
     z-index: 2;
     transition: var(--transition-smooth);
 }
 
 .hero-card:hover .card-overlay {
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 50%,
-        rgba(0, 0, 0, 0.3) 100%
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 0.3) 100%);
 }
 
 /* Text Container */
@@ -325,7 +332,8 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    height: 28vh; /* Proportionate bottom row height */
+    height: 28vh;
+    /* Proportionate bottom row height */
     overflow: hidden;
 }
 
@@ -513,6 +521,156 @@ a {
 }
 
 /* ==========================================================================
+   5c. MOBILE HAMBURGER TOGGLE & DRAWER MENU STYLING [NEW]
+   ========================================================================== */
+
+/* ปุ่มแฮมเบอร์เกอร์เมนูสำหรับหน้าจอขนาดเล็ก (ออกแบบมินิมอล) */
+.mobile-menu-toggle {
+    display: none; /* ซ่อนเริ่มต้นบนเดสก์ท็อป */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 22px;
+    height: 14px;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-fast);
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-text-dark);
+}
+
+/* แผงสไลด์ด้านข้างสไตล์แบรนด์เสื้อผ้า Premium (Drawer Sidebar) */
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%; /* ซ่อนไว้นอกจอทางขวา */
+    width: 82%; /* กินพื้นที่ 82% ของความกว้างจอ */
+    max-width: 320px; /* จำกัดความกว้างไม่ให้ใหญ่เกินไป */
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.08); /* เงาเงียบขรึมด้านซ้าย */
+    z-index: 1050;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px 24px 40px 24px; /* เว้นระยะด้านบนสำหรับหัวข้อเมนู */
+    box-sizing: border-box;
+}
+
+.mobile-drawer.active {
+    right: 0; /* เลื่อนสไลด์เข้ามาในจอ */
+}
+
+/* ปุ่มกากบาทปิด (X) จัดให้อยู่มุมบนขวาของกล่องสไลด์ [NEW] */
+.drawer-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px; /* ขนาดกากบาทปิดให้อ่านออกและกดง่าย */
+    color: var(--color-text-dark);
+    padding: 5px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    z-index: 1060; /* ให้อยู่ด้านบนสุดของสไลด์เมนู */
+}
+
+.drawer-close:hover {
+    opacity: 1;
+}
+
+/* โครงสร้างป้ายลิงก์แบบจัดชิดซ้าย (Left-aligned) */
+.mobile-drawer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* ให้ลิงก์ขยายเต็มความกว้าง */
+    width: 100%;
+}
+
+.mobile-drawer-link {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--color-text-dark);
+    text-transform: uppercase;
+    padding: 16px 0;
+    border-bottom: 1.5px solid #f1f5f9; /* เส้นแบ่งแถวสวยงาม */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-fast);
+}
+
+/* เพิ่มลูกศรจางๆ ด้านขวาของเมนูหลัก */
+.mobile-drawer-link:not(.util)::after {
+    content: "→";
+    font-size: 13px;
+    color: #cbd5e1;
+    transition: transform 0.25s ease;
+}
+
+.mobile-drawer-link:not(.util):hover::after {
+    transform: translateX(4px);
+    color: var(--color-text-dark);
+}
+
+/* สไตล์เมนูหมวดย่อยด้านล่าง */
+.mobile-drawer-link.util {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text-muted);
+    border-bottom: none;
+    padding: 10px 0;
+}
+
+.mobile-drawer-link.util:hover {
+    color: var(--color-text-dark);
+}
+
+.drawer-divider {
+    border: none;
+    border-top: 1.5px solid #f1f5f9;
+    margin: 15px 0;
+}
+
+/* ปุ่ม CTA สร้างบัญชี */
+.btn-drawer-cta {
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px;
+    border-radius: 4px; /* ขอบเหลี่ยมพรีเมียม */
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-drawer-cta:hover {
+    background-color: #262626;
+}
+
+
+
+/* ==========================================================================
    6. RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 
@@ -522,7 +680,7 @@ a {
         gap: 15px;
         margin-left: 20px;
     }
-    
+
     .nav-utilities {
         gap: 15px;
     }
@@ -530,7 +688,8 @@ a {
 
 /* 6b. Table Portrait / Small Screen */
 @media (max-width: 992px) {
-    /* Hide some navigation links on tablet to preserve space */
+
+    /* ซ่อนลิงก์บางส่วนในแท็บเล็ตเพื่อประหยัดพื้นที่ */
     .nav-categories .nav-link:nth-child(4),
     .nav-categories .nav-link:nth-child(5),
     .nav-categories .nav-link:nth-child(7),
@@ -541,70 +700,80 @@ a {
     .hero-grid {
         height: 60vh;
     }
-    
+
     .showcase-grid {
         grid-template-columns: 1fr 1fr;
         height: auto;
     }
-    
+
     .showcase-card {
         height: 250px;
     }
 }
 
-/* 6c. Mobile Screens */
+/* 6c. Mobile Screens (หน้าจอมือถือ) */
 @media (max-width: 768px) {
-    /* Compress announcement bar */
+
+    /* ย่อแถบประกาศด้านบน */
     .promo-bar {
         padding: 8px 30px 8px 15px;
         font-size: 10px;
     }
-    
-    /* Adapt Header for Mobile */
+
+    /* ปรับแต่ง Header สำหรับจอมือถือ */
     .header-container {
-        padding: 15px 20px;
+        padding: 12px 20px;
     }
-    
+
     .nav-categories {
-        display: none; /* Hide primary nav menu; could be replaced by hamburger drawer */
+        display: none;
+        /* ซ่อนลิงก์หลักยาวๆ ไปใส่ใน Drawer */
     }
-    
-    .nav-utilities .util-link {
-        display: none; /* Hide search/cart text */
+
+    /* ซ่อนปุ่ม Create Account และลิงก์ทั่วไปบน Header */
+    .nav-utilities .util-link,
+    .nav-utilities .btn-create-account {
+        display: none;
     }
-    
+
+    /* แสดงปุ่มเมนูแฮมเบอร์เกอร์แทน */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
     .logo {
-        font-size: 22px;
+        font-size: 20px;
     }
-    
-    /* Stack Hero split grid */
+
+    /* จัดการ์ด Hero ซ้อนกันในแนวตั้ง */
     .hero-grid {
         grid-template-columns: 1fr;
-        height: 100vh; /* Allow more space when stacked */
+        height: 80vh;
+        /* ให้ขนาดกำลังสวยงามพอเหมาะกับหน้าจอมือถือแนวตั้ง */
     }
-    
+
     .hero-card {
-        padding: 30px;
+        padding: 24px;
     }
-    
+
     .hero-card .category-title {
-        font-size: 38px;
+        font-size: 34px;
     }
-    
-    /* Stack Bottom Grid */
+
+    /* จัดการ์ดแนะนำกลุ่มสินค้าเรียงแนวตั้งเดี่ยว */
     .showcase-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .showcase-card {
-        height: 220px;
-        padding: 24px;
+        height: 200px;
+        padding: 20px;
     }
-    
+
     .expo-title {
-        font-size: 32px;
+        font-size: 28px;
     }
-    
+
     .support-widget {
         bottom: 20px;
         left: 20px;
@@ -620,6 +789,7 @@ a {
     from {
         transform: translateY(-100%);
     }
+
     to {
         transform: translateY(0);
     }
@@ -884,15 +1054,41 @@ a {
 }
 
 /* Color definitions */
-.swatch.white { background-color: #ffffff; }
-.swatch.black { background-color: #1a1a1a; }
-.swatch.grey { background-color: #b5b5b5; }
-.swatch.navy { background-color: #1f2e4d; }
-.swatch.sand { background-color: #dac7b3; }
-.swatch.charcoal { background-color: #3b3b3b; }
-.swatch.sage { background-color: #8da392; }
-.swatch.mustard { background-color: #dba33f; }
-.swatch.forest { background-color: #2b3d32; }
+.swatch.white {
+    background-color: #ffffff;
+}
+
+.swatch.black {
+    background-color: #1a1a1a;
+}
+
+.swatch.grey {
+    background-color: #b5b5b5;
+}
+
+.swatch.navy {
+    background-color: #1f2e4d;
+}
+
+.swatch.sand {
+    background-color: #dac7b3;
+}
+
+.swatch.charcoal {
+    background-color: #3b3b3b;
+}
+
+.swatch.sage {
+    background-color: #8da392;
+}
+
+.swatch.mustard {
+    background-color: #dba33f;
+}
+
+.swatch.forest {
+    background-color: #2b3d32;
+}
 
 /* ==========================================================================
    9. EDITORIAL JOURNAL BANNER
@@ -1139,12 +1335,12 @@ a {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-    
+
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-    
+
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
@@ -1155,48 +1351,60 @@ a {
     .brand-values {
         padding: 60px 20px;
     }
-    
+
     .values-container {
         grid-template-columns: 1fr;
         gap: 35px;
     }
-    
+
     .featured-products {
         padding: 60px 20px;
     }
-    
+
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 15px;
     }
-    
+
+    .item-name {
+        font-size: 13px;
+    }
+
+    .product-price {
+        font-size: 13px;
+    }
+
+    .color-swatches {
+        gap: 6px;
+    }
+
     .journal-banner {
         height: auto;
         padding: 60px 20px;
     }
-    
+
     .banner-title {
         font-size: 30px;
     }
-    
+
     .banner-desc {
         font-size: 14.5px;
         margin-bottom: 25px;
     }
-    
+
     .site-footer {
         padding: 60px 20px 0 20px;
     }
-    
+
     .footer-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .footer-bottom {
         margin-top: 60px;
     }
-    
+
     .footer-bottom-container {
         flex-direction: column;
         gap: 15px;
@@ -1215,6 +1423,7 @@ a {
         opacity: 0;
         transform: translateY(35px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -1229,6 +1438,7 @@ a {
 .hero-card.mens {
     animation-delay: 0.1s;
 }
+
 .hero-card.womens {
     animation-delay: 0.25s;
 }
@@ -1237,9 +1447,10 @@ a {
 .scroll-trigger {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity; /* ช่วยเร่งการประมวลผลการเคลื่อนไหวผ่าน GPU */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    /* ช่วยเร่งการประมวลผลการเคลื่อนไหวผ่าน GPU */
 }
 
 /* คลาสที่บราวเซอร์จะแปะให้ผ่าน Javascript เมื่อเนื้อหามาอยู่ในพื้นที่สายตา */
@@ -1251,22 +1462,52 @@ a {
 /* ตั้งค่าการหน่วงเวลาเปิดตัวแบบทีละขั้นตอน (Staggered Delays) ของสินค้าในแนวเดียวกัน */
 
 /* หมวดหมู่สินค้าแนะนำ */
-.showcase-grid .showcase-card.visible:nth-child(1) { transition-delay: 0.1s; }
-.showcase-grid .showcase-card.visible:nth-child(2) { transition-delay: 0.22s; }
-.showcase-grid .showcase-card.visible:nth-child(3) { transition-delay: 0.34s; }
-.showcase-grid .showcase-card.visible:nth-child(4) { transition-delay: 0.46s; }
+.showcase-grid .showcase-card.visible:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.showcase-grid .showcase-card.visible:nth-child(2) {
+    transition-delay: 0.22s;
+}
+
+.showcase-grid .showcase-card.visible:nth-child(3) {
+    transition-delay: 0.34s;
+}
+
+.showcase-grid .showcase-card.visible:nth-child(4) {
+    transition-delay: 0.46s;
+}
 
 /* จุดเด่นผลิตภัณฑ์ */
-.values-container .value-item.visible:nth-child(1) { transition-delay: 0.1s; }
-.values-container .value-item.visible:nth-child(2) { transition-delay: 0.22s; }
-.values-container .value-item.visible:nth-child(3) { transition-delay: 0.34s; }
-.values-container .value-item.visible:nth-child(4) { transition-delay: 0.46s; }
+.values-container .value-item.visible:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.values-container .value-item.visible:nth-child(2) {
+    transition-delay: 0.22s;
+}
+
+.values-container .value-item.visible:nth-child(3) {
+    transition-delay: 0.34s;
+}
+
+.values-container .value-item.visible:nth-child(4) {
+    transition-delay: 0.46s;
+}
 
 /* สินค้ามาใหม่ (New Arrivals) */
-.products-grid .product-item.visible:nth-child(1) { transition-delay: 0.1s; }
-.products-grid .product-item.visible:nth-child(2) { transition-delay: 0.22s; }
-.products-grid .product-item.visible:nth-child(3) { transition-delay: 0.34s; }
-.products-grid .product-item.visible:nth-child(4) { transition-delay: 0.46s; }
+.products-grid .product-item.visible:nth-child(1) {
+    transition-delay: 0.1s;
+}
 
+.products-grid .product-item.visible:nth-child(2) {
+    transition-delay: 0.22s;
+}
 
+.products-grid .product-item.visible:nth-child(3) {
+    transition-delay: 0.34s;
+}
 
+.products-grid .product-item.visible:nth-child(4) {
+    transition-delay: 0.46s;
+}
